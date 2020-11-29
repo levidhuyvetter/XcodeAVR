@@ -1,0 +1,1257 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DBD1EC2D257447E800663033 /* linker.xcspec in Resources */ = {isa = PBXBuildFile; fileRef = DBD1EC24257447E700663033 /* linker.xcspec */; };
+		DBD1EC2E257447E800663033 /* packages.xcspec in Resources */ = {isa = PBXBuildFile; fileRef = DBD1EC25257447E700663033 /* packages.xcspec */; };
+		DBD1EC2F257447E800663033 /* files.xcspec in Resources */ = {isa = PBXBuildFile; fileRef = DBD1EC26257447E700663033 /* files.xcspec */; };
+		DBD1EC30257447E800663033 /* compiler.xcspec in Resources */ = {isa = PBXBuildFile; fileRef = DBD1EC27257447E700663033 /* compiler.xcspec */; };
+		DBD1EC31257447E800663033 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBD1EC28257447E700663033 /* Media.xcassets */; };
+		DBD1EC32257447E800663033 /* buildsystem.xcspec in Resources */ = {isa = PBXBuildFile; fileRef = DBD1EC29257447E700663033 /* buildsystem.xcspec */; };
+		DBD1EC33257447E800663033 /* products.xcspec in Resources */ = {isa = PBXBuildFile; fileRef = DBD1EC2A257447E800663033 /* products.xcspec */; };
+		DBD1EC34257447E800663033 /* architecture.xcspec in Resources */ = {isa = PBXBuildFile; fileRef = DBD1EC2B257447E800663033 /* architecture.xcspec */; };
+		DBD1EC35257447E800663033 /* IDEAVRPlatformSupportCore.xcplugindata in Resources */ = {isa = PBXBuildFile; fileRef = DBD1EC2C257447E800663033 /* IDEAVRPlatformSupportCore.xcplugindata */; };
+		DBD1EC3D2574484800663033 /* IDERunAVRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD1EC382574484700663033 /* IDERunAVRService.swift */; };
+		DBD1EC3E2574484800663033 /* DVTAVRDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD1EC392574484700663033 /* DVTAVRDevice.swift */; };
+		DBD1EC3F2574484800663033 /* DVTAVRDeviceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD1EC3A2574484700663033 /* DVTAVRDeviceLocator.swift */; };
+		DBD1EC402574484800663033 /* IDERunAVROperationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD1EC3B2574484800663033 /* IDERunAVROperationWorker.swift */; };
+		DBD1EC44257448C300663033 /* DVTFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD1EC43257448C300663033 /* DVTFoundation.framework */; };
+		DBD1EC49257448DA00663033 /* IDEFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD1EC48257448DA00663033 /* IDEFoundation.framework */; };
+		DBD1EC6025744ACC00663033 /* main.c in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBD1EC5925744A9300663033 /* main.c */; };
+		DBD1EC8925744BC200663033 /* TemplateIcon.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBD1EC7625744B7800663033 /* TemplateIcon.png */; };
+		DBD1EC8A25744BC200663033 /* TemplateIcon@2x.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBD1EC7725744B7800663033 /* TemplateIcon@2x.png */; };
+		DBD1ECCE25744EFB00663033 /* Icon.icns in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBD1ECBA25744E9500663033 /* Icon.icns */; };
+		DBD1ECD525744F3400663033 /* AVR.sdk in Copy SDK */ = {isa = PBXBuildFile; fileRef = DBD1EC9325744CC700663033 /* AVR.sdk */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DBD1ECD725744F7C00663033 /* Base.xctemplate in Copy Template */ = {isa = PBXBuildFile; fileRef = DBD1EC51257449B500663033 /* Base.xctemplate */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DBD1ECD925744FAA00663033 /* Application.xctemplate in Copy AppTemplate */ = {isa = PBXBuildFile; fileRef = DBD1EC6D25744B5F00663033 /* Application.xctemplate */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DBD1ECDB25744FD700663033 /* IDEAVRPlatformSupportCore.ideplugin in Copy Core */ = {isa = PBXBuildFile; fileRef = DBD1EC182574456800663033 /* IDEAVRPlatformSupportCore.ideplugin */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DBD1ED04257457F500663033 /* TemplateInfo.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBD1EC6325744AEB00663033 /* TemplateInfo.plist */; };
+		DBD1ED0A2574580700663033 /* TemplateInfo.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBD1EC7825744B7800663033 /* TemplateInfo.plist */; };
+		DBD1ED112574582000663033 /* SDKSettings.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBD1EC9D25744D3A00663033 /* SDKSettings.plist */; };
+		DBD1ED172574583800663033 /* Info.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBD1ECBB25744E9500663033 /* Info.plist */; };
+		DBE0F1822574660A005CFA3B /* AVR.platform in Install Platform */ = {isa = PBXBuildFile; fileRef = DBD1ECA725744E0C00663033 /* AVR.platform */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DBD1ECB225744E3D00663033 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBD1EC012574429D00663033 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBD1EC6C25744B5F00663033;
+			remoteInfo = AppTemplate;
+		};
+		DBD1ECB425744E3D00663033 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBD1EC012574429D00663033 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBD1EC172574456800663033;
+			remoteInfo = Core;
+		};
+		DBD1ECB625744E3D00663033 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBD1EC012574429D00663033 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBD1EC9225744CC700663033;
+			remoteInfo = SDK;
+		};
+		DBD1ECB825744E3D00663033 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBD1EC012574429D00663033 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBD1EC50257449B500663033;
+			remoteInfo = Template;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DBD1EC5F25744ABB00663033 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 1;
+			files = (
+				DBD1ED04257457F500663033 /* TemplateInfo.plist in CopyFiles */,
+				DBD1EC6025744ACC00663033 /* main.c in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBD1EC8825744BB200663033 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 1;
+			files = (
+				DBD1ED0A2574580700663033 /* TemplateInfo.plist in CopyFiles */,
+				DBD1EC8925744BC200663033 /* TemplateIcon.png in CopyFiles */,
+				DBD1EC8A25744BC200663033 /* TemplateIcon@2x.png in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBD1ECCD25744EF000663033 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 1;
+			files = (
+				DBD1ED172574583800663033 /* Info.plist in CopyFiles */,
+				DBD1ECCE25744EFB00663033 /* Icon.icns in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBD1ECD425744F0200663033 /* Copy SDK */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Developer/SDKs;
+			dstSubfolderSpec = 1;
+			files = (
+				DBD1ECD525744F3400663033 /* AVR.sdk in Copy SDK */,
+			);
+			name = "Copy SDK";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBD1ECD625744F4A00663033 /* Copy Template */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "Developer/Library/Xcode/Templates/Project Templates/AVR";
+			dstSubfolderSpec = 1;
+			files = (
+				DBD1ECD725744F7C00663033 /* Base.xctemplate in Copy Template */,
+			);
+			name = "Copy Template";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBD1ECD825744F9200663033 /* Copy AppTemplate */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "Developer/Library/Xcode/Templates/Project Templates/AVR/Application";
+			dstSubfolderSpec = 1;
+			files = (
+				DBD1ECD925744FAA00663033 /* Application.xctemplate in Copy AppTemplate */,
+			);
+			name = "Copy AppTemplate";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBD1ECDA25744FB200663033 /* Copy Core */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Developer/Library/Xcode/PrivatePlugIns;
+			dstSubfolderSpec = 1;
+			files = (
+				DBD1ECDB25744FD700663033 /* IDEAVRPlatformSupportCore.ideplugin in Copy Core */,
+			);
+			name = "Copy Core";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBD1ED102574581400663033 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 1;
+			files = (
+				DBD1ED112574582000663033 /* SDKSettings.plist in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBE0F181257465D8005CFA3B /* Install Platform */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /Applications/XcodeAVR.app/Contents/Developer/Platforms;
+			dstSubfolderSpec = 0;
+			files = (
+				DBE0F1822574660A005CFA3B /* AVR.platform in Install Platform */,
+			);
+			name = "Install Platform";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		DBD1EC182574456800663033 /* IDEAVRPlatformSupportCore.ideplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IDEAVRPlatformSupportCore.ideplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBD1EC1A2574456800663033 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBD1EC1F257447BB00663033 /* DVTFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVTFoundation.h; sourceTree = "<group>"; };
+		DBD1EC20257447BB00663033 /* DVTDeviceKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVTDeviceKit.h; sourceTree = "<group>"; };
+		DBD1EC21257447BB00663033 /* DVTDeviceFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVTDeviceFoundation.h; sourceTree = "<group>"; };
+		DBD1EC22257447BB00663033 /* IDEFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDEFoundation.h; sourceTree = "<group>"; };
+		DBD1EC24257447E700663033 /* linker.xcspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xcspec; path = linker.xcspec; sourceTree = "<group>"; };
+		DBD1EC25257447E700663033 /* packages.xcspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xcspec; path = packages.xcspec; sourceTree = "<group>"; };
+		DBD1EC26257447E700663033 /* files.xcspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xcspec; path = files.xcspec; sourceTree = "<group>"; };
+		DBD1EC27257447E700663033 /* compiler.xcspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xcspec; path = compiler.xcspec; sourceTree = "<group>"; };
+		DBD1EC28257447E700663033 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		DBD1EC29257447E700663033 /* buildsystem.xcspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xcspec; path = buildsystem.xcspec; sourceTree = "<group>"; };
+		DBD1EC2A257447E800663033 /* products.xcspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xcspec; path = products.xcspec; sourceTree = "<group>"; };
+		DBD1EC2B257447E800663033 /* architecture.xcspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xcspec; path = architecture.xcspec; sourceTree = "<group>"; };
+		DBD1EC2C257447E800663033 /* IDEAVRPlatformSupportCore.xcplugindata */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = IDEAVRPlatformSupportCore.xcplugindata; sourceTree = "<group>"; };
+		DBD1EC372574484700663033 /* Core-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Core-Bridging-Header.h"; sourceTree = "<group>"; };
+		DBD1EC382574484700663033 /* IDERunAVRService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDERunAVRService.swift; sourceTree = "<group>"; };
+		DBD1EC392574484700663033 /* DVTAVRDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVTAVRDevice.swift; sourceTree = "<group>"; };
+		DBD1EC3A2574484700663033 /* DVTAVRDeviceLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVTAVRDeviceLocator.swift; sourceTree = "<group>"; };
+		DBD1EC3B2574484800663033 /* IDERunAVROperationWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDERunAVROperationWorker.swift; sourceTree = "<group>"; };
+		DBD1EC43257448C300663033 /* DVTFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTFoundation.framework; path = ../../../../../Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework; sourceTree = "<group>"; };
+		DBD1EC48257448DA00663033 /* IDEFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IDEFoundation.framework; path = ../../../../../Applications/Xcode.app/Contents/Frameworks/IDEFoundation.framework; sourceTree = "<group>"; };
+		DBD1EC51257449B500663033 /* Base.xctemplate */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Base.xctemplate; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBD1EC5925744A9300663033 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		DBD1EC6325744AEB00663033 /* TemplateInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TemplateInfo.plist; sourceTree = "<group>"; };
+		DBD1EC6D25744B5F00663033 /* Application.xctemplate */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Application.xctemplate; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBD1EC7625744B7800663033 /* TemplateIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TemplateIcon.png; sourceTree = "<group>"; };
+		DBD1EC7725744B7800663033 /* TemplateIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TemplateIcon@2x.png"; sourceTree = "<group>"; };
+		DBD1EC7825744B7800663033 /* TemplateInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TemplateInfo.plist; sourceTree = "<group>"; };
+		DBD1EC9325744CC700663033 /* AVR.sdk */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AVR.sdk; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBD1EC9D25744D3A00663033 /* SDKSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = SDKSettings.plist; sourceTree = "<group>"; };
+		DBD1ECA725744E0C00663033 /* AVR.platform */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AVR.platform; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBD1ECBA25744E9500663033 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
+		DBD1ECBB25744E9500663033 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Info.plist; sourceTree = "<group>"; };
+		DBD1ED4125745B9000663033 /* Certificates.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Certificates.p12; sourceTree = "<group>"; };
+		DBE0F188257469F7005CFA3B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DBD1EC152574456800663033 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBD1EC49257448DA00663033 /* IDEFoundation.framework in Frameworks */,
+				DBD1EC44257448C300663033 /* DVTFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DBD1EC002574429D00663033 = {
+			isa = PBXGroup;
+			children = (
+				DBE0F188257469F7005CFA3B /* README.md */,
+				DBD1ED4125745B9000663033 /* Certificates.p12 */,
+				DBD1EC1E2574476900663033 /* XcodeHeaders */,
+				DBD1EC192574456800663033 /* Core */,
+				DBD1EC52257449B500663033 /* Template */,
+				DBD1EC6E25744B5F00663033 /* AppTemplate */,
+				DBD1EC9425744CC700663033 /* SDK */,
+				DBD1ECA825744E0C00663033 /* Platform */,
+				DBD1EC0D2574450900663033 /* Products */,
+				DBD1EC42257448C300663033 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DBD1EC0D2574450900663033 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DBD1EC182574456800663033 /* IDEAVRPlatformSupportCore.ideplugin */,
+				DBD1EC51257449B500663033 /* Base.xctemplate */,
+				DBD1EC6D25744B5F00663033 /* Application.xctemplate */,
+				DBD1EC9325744CC700663033 /* AVR.sdk */,
+				DBD1ECA725744E0C00663033 /* AVR.platform */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DBD1EC192574456800663033 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				DBD1EC392574484700663033 /* DVTAVRDevice.swift */,
+				DBD1EC3A2574484700663033 /* DVTAVRDeviceLocator.swift */,
+				DBD1EC3B2574484800663033 /* IDERunAVROperationWorker.swift */,
+				DBD1EC382574484700663033 /* IDERunAVRService.swift */,
+				DBD1EC1A2574456800663033 /* Info.plist */,
+				DBD1EC23257447D500663033 /* Resources */,
+				DBD1EC372574484700663033 /* Core-Bridging-Header.h */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		DBD1EC1E2574476900663033 /* XcodeHeaders */ = {
+			isa = PBXGroup;
+			children = (
+				DBD1EC21257447BB00663033 /* DVTDeviceFoundation.h */,
+				DBD1EC20257447BB00663033 /* DVTDeviceKit.h */,
+				DBD1EC1F257447BB00663033 /* DVTFoundation.h */,
+				DBD1EC22257447BB00663033 /* IDEFoundation.h */,
+			);
+			path = XcodeHeaders;
+			sourceTree = "<group>";
+		};
+		DBD1EC23257447D500663033 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DBD1EC2B257447E800663033 /* architecture.xcspec */,
+				DBD1EC29257447E700663033 /* buildsystem.xcspec */,
+				DBD1EC27257447E700663033 /* compiler.xcspec */,
+				DBD1EC26257447E700663033 /* files.xcspec */,
+				DBD1EC2C257447E800663033 /* IDEAVRPlatformSupportCore.xcplugindata */,
+				DBD1EC24257447E700663033 /* linker.xcspec */,
+				DBD1EC28257447E700663033 /* Media.xcassets */,
+				DBD1EC25257447E700663033 /* packages.xcspec */,
+				DBD1EC2A257447E800663033 /* products.xcspec */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DBD1EC42257448C300663033 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DBD1EC48257448DA00663033 /* IDEFoundation.framework */,
+				DBD1EC43257448C300663033 /* DVTFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DBD1EC52257449B500663033 /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				DBD1EC6325744AEB00663033 /* TemplateInfo.plist */,
+				DBD1EC5925744A9300663033 /* main.c */,
+			);
+			path = Template;
+			sourceTree = "<group>";
+		};
+		DBD1EC6E25744B5F00663033 /* AppTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				DBD1EC7625744B7800663033 /* TemplateIcon.png */,
+				DBD1EC7725744B7800663033 /* TemplateIcon@2x.png */,
+				DBD1EC7825744B7800663033 /* TemplateInfo.plist */,
+			);
+			path = AppTemplate;
+			sourceTree = "<group>";
+		};
+		DBD1EC9425744CC700663033 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				DBD1EC9D25744D3A00663033 /* SDKSettings.plist */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		DBD1ECA825744E0C00663033 /* Platform */ = {
+			isa = PBXGroup;
+			children = (
+				DBD1ECBA25744E9500663033 /* Icon.icns */,
+				DBD1ECBB25744E9500663033 /* Info.plist */,
+			);
+			path = Platform;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DBD1EC172574456800663033 /* Core */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBD1EC1B2574456800663033 /* Build configuration list for PBXNativeTarget "Core" */;
+			buildPhases = (
+				DBD1EC142574456800663033 /* Sources */,
+				DBD1EC152574456800663033 /* Frameworks */,
+				DBD1EC162574456800663033 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Core;
+			productName = Core;
+			productReference = DBD1EC182574456800663033 /* IDEAVRPlatformSupportCore.ideplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+		DBD1EC50257449B500663033 /* Template */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBD1EC54257449B500663033 /* Build configuration list for PBXNativeTarget "Template" */;
+			buildPhases = (
+				DBD1EC5F25744ABB00663033 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Template;
+			productName = Template;
+			productReference = DBD1EC51257449B500663033 /* Base.xctemplate */;
+			productType = "com.apple.product-type.bundle";
+		};
+		DBD1EC6C25744B5F00663033 /* AppTemplate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBD1EC7025744B5F00663033 /* Build configuration list for PBXNativeTarget "AppTemplate" */;
+			buildPhases = (
+				DBD1EC8825744BB200663033 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AppTemplate;
+			productName = AppTemplate;
+			productReference = DBD1EC6D25744B5F00663033 /* Application.xctemplate */;
+			productType = "com.apple.product-type.bundle";
+		};
+		DBD1EC9225744CC700663033 /* SDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBD1EC9625744CC700663033 /* Build configuration list for PBXNativeTarget "SDK" */;
+			buildPhases = (
+				DBD1ED102574581400663033 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SDK;
+			productName = SDK;
+			productReference = DBD1EC9325744CC700663033 /* AVR.sdk */;
+			productType = "com.apple.product-type.bundle";
+		};
+		DBD1ECA625744E0C00663033 /* Platform */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBD1ECAA25744E0C00663033 /* Build configuration list for PBXNativeTarget "Platform" */;
+			buildPhases = (
+				DBD1ECCD25744EF000663033 /* CopyFiles */,
+				DBD1ECD425744F0200663033 /* Copy SDK */,
+				DBD1ECD625744F4A00663033 /* Copy Template */,
+				DBD1ECD825744F9200663033 /* Copy AppTemplate */,
+				DBD1ECDA25744FB200663033 /* Copy Core */,
+				DBE0F181257465D8005CFA3B /* Install Platform */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DBD1ECB325744E3D00663033 /* PBXTargetDependency */,
+				DBD1ECB525744E3D00663033 /* PBXTargetDependency */,
+				DBD1ECB725744E3D00663033 /* PBXTargetDependency */,
+				DBD1ECB925744E3D00663033 /* PBXTargetDependency */,
+			);
+			name = Platform;
+			productName = Platform;
+			productReference = DBD1ECA725744E0C00663033 /* AVR.platform */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DBD1EC012574429D00663033 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					DBD1EC172574456800663033 = {
+						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
+					};
+					DBD1EC50257449B500663033 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					DBD1EC6C25744B5F00663033 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					DBD1EC9225744CC700663033 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					DBD1ECA625744E0C00663033 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+				};
+			};
+			buildConfigurationList = DBD1EC042574429D00663033 /* Build configuration list for PBXProject "XcodeAVR" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DBD1EC002574429D00663033;
+			productRefGroup = DBD1EC0D2574450900663033 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DBD1EC172574456800663033 /* Core */,
+				DBD1EC50257449B500663033 /* Template */,
+				DBD1EC6C25744B5F00663033 /* AppTemplate */,
+				DBD1EC9225744CC700663033 /* SDK */,
+				DBD1ECA625744E0C00663033 /* Platform */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DBD1EC162574456800663033 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBD1EC33257447E800663033 /* products.xcspec in Resources */,
+				DBD1EC35257447E800663033 /* IDEAVRPlatformSupportCore.xcplugindata in Resources */,
+				DBD1EC31257447E800663033 /* Media.xcassets in Resources */,
+				DBD1EC34257447E800663033 /* architecture.xcspec in Resources */,
+				DBD1EC2E257447E800663033 /* packages.xcspec in Resources */,
+				DBD1EC2F257447E800663033 /* files.xcspec in Resources */,
+				DBD1EC32257447E800663033 /* buildsystem.xcspec in Resources */,
+				DBD1EC30257447E800663033 /* compiler.xcspec in Resources */,
+				DBD1EC2D257447E800663033 /* linker.xcspec in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DBD1EC142574456800663033 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBD1EC402574484800663033 /* IDERunAVROperationWorker.swift in Sources */,
+				DBD1EC3E2574484800663033 /* DVTAVRDevice.swift in Sources */,
+				DBD1EC3F2574484800663033 /* DVTAVRDeviceLocator.swift in Sources */,
+				DBD1EC3D2574484800663033 /* IDERunAVRService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DBD1ECB325744E3D00663033 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBD1EC6C25744B5F00663033 /* AppTemplate */;
+			targetProxy = DBD1ECB225744E3D00663033 /* PBXContainerItemProxy */;
+		};
+		DBD1ECB525744E3D00663033 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBD1EC172574456800663033 /* Core */;
+			targetProxy = DBD1ECB425744E3D00663033 /* PBXContainerItemProxy */;
+		};
+		DBD1ECB725744E3D00663033 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBD1EC9225744CC700663033 /* SDK */;
+			targetProxy = DBD1ECB625744E3D00663033 /* PBXContainerItemProxy */;
+		};
+		DBD1ECB925744E3D00663033 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBD1EC50257449B500663033 /* Template */;
+			targetProxy = DBD1ECB825744E3D00663033 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DBD1EC052574429D00663033 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		DBD1EC062574429D00663033 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		DBD1EC1C2574456800663033 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = XcodeAVR;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					/Applications/Xcode.app/Contents/SharedFrameworks,
+					/Applications/Xcode.app/Contents/Frameworks,
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/XcodeHeaders";
+				INFOPLIST_FILE = Core/Info.plist;
+				INSTALL_PATH = /Applications/Xcode.app/Contents/Developer/Platforms/AVR.platform/Developer/Library/Xcode/PrivatePlugIns/;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/Applications/Xcode.app/Contents/SharedFrameworks,
+					/Applications/Xcode.app/Contents/Frameworks,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.dt.IDEAVRPlatformSupportCore;
+				PRODUCT_NAME = IDEAVRPlatformSupportCore;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Core/Core-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				WRAPPER_EXTENSION = ideplugin;
+			};
+			name = Debug;
+		};
+		DBD1EC1D2574456800663033 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = XcodeAVR;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					/Applications/Xcode.app/Contents/SharedFrameworks,
+					/Applications/Xcode.app/Contents/Frameworks,
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/XcodeHeaders";
+				INFOPLIST_FILE = Core/Info.plist;
+				INSTALL_PATH = /Applications/Xcode.app/Contents/Developer/Platforms/AVR.platform/Developer/Library/Xcode/PrivatePlugIns/;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/Applications/Xcode.app/Contents/SharedFrameworks,
+					/Applications/Xcode.app/Contents/Frameworks,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.dt.IDEAVRPlatformSupportCore;
+				PRODUCT_NAME = IDEAVRPlatformSupportCore;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Core/Core-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				WRAPPER_EXTENSION = ideplugin;
+			};
+			name = Release;
+		};
+		DBD1EC55257449B500663033 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "/Applications/Xcode.app/Contents/Developer/Platforms/AVR.platform/Developer/Library/Xcode/Templates/Project Templates/AVR";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atmel.dt.unit.base;
+				PRODUCT_NAME = Base;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = xctemplate;
+			};
+			name = Debug;
+		};
+		DBD1EC56257449B500663033 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "/Applications/Xcode.app/Contents/Developer/Platforms/AVR.platform/Developer/Library/Xcode/Templates/Project Templates/AVR";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atmel.dt.unit.base;
+				PRODUCT_NAME = Base;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = xctemplate;
+			};
+			name = Release;
+		};
+		DBD1EC7125744B5F00663033 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "/Applications/Xcode.app/Contents/Developer/Platforms/AVR.platform/Developer/Library/Xcode/Templates/Project Templates/AVR/Application/";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atmel.dt.unit.application;
+				PRODUCT_NAME = Application;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = xctemplate;
+			};
+			name = Debug;
+		};
+		DBD1EC7225744B5F00663033 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "/Applications/Xcode.app/Contents/Developer/Platforms/AVR.platform/Developer/Library/Xcode/Templates/Project Templates/AVR/Application/";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atmel.dt.unit.application;
+				PRODUCT_NAME = Application;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = xctemplate;
+			};
+			name = Release;
+		};
+		DBD1EC9725744CC700663033 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = /Applications/Xcode.app/Contents/Developer/Platforms/AVR.platform/Developer/SDKs/;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = avr;
+				PRODUCT_NAME = AVR;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = sdk;
+			};
+			name = Debug;
+		};
+		DBD1EC9825744CC700663033 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = /Applications/Xcode.app/Contents/Developer/Platforms/AVR.platform/Developer/SDKs/;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = avr;
+				PRODUCT_NAME = AVR;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = sdk;
+			};
+			name = Release;
+		};
+		DBD1ECAB25744E0C00663033 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = /Applications/Xcode.app/Contents/Developer/Platforms/;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atmel.platform.avr;
+				PRODUCT_NAME = AVR;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = platform;
+			};
+			name = Debug;
+		};
+		DBD1ECAC25744E0C00663033 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = /Applications/Xcode.app/Contents/Developer/Platforms/;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atmel.platform.avr;
+				PRODUCT_NAME = AVR;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = platform;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DBD1EC042574429D00663033 /* Build configuration list for PBXProject "XcodeAVR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBD1EC052574429D00663033 /* Debug */,
+				DBD1EC062574429D00663033 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBD1EC1B2574456800663033 /* Build configuration list for PBXNativeTarget "Core" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBD1EC1C2574456800663033 /* Debug */,
+				DBD1EC1D2574456800663033 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBD1EC54257449B500663033 /* Build configuration list for PBXNativeTarget "Template" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBD1EC55257449B500663033 /* Debug */,
+				DBD1EC56257449B500663033 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBD1EC7025744B5F00663033 /* Build configuration list for PBXNativeTarget "AppTemplate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBD1EC7125744B5F00663033 /* Debug */,
+				DBD1EC7225744B5F00663033 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBD1EC9625744CC700663033 /* Build configuration list for PBXNativeTarget "SDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBD1EC9725744CC700663033 /* Debug */,
+				DBD1EC9825744CC700663033 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBD1ECAA25744E0C00663033 /* Build configuration list for PBXNativeTarget "Platform" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBD1ECAB25744E0C00663033 /* Debug */,
+				DBD1ECAC25744E0C00663033 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DBD1EC012574429D00663033 /* Project object */;
+}

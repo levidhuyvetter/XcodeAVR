@@ -1,0 +1,12 @@
+(
+	{
+		Type = Architecture;
+		Identifier = avr;
+		Name = "AVR";
+		Description = "8-bit AVR";
+		PerArchBuildSettingName = "AVR";
+		ByteOrder = little;
+		ListInEnum = YES;
+		SortNumber = 1;
+	},
+)

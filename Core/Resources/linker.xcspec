@@ -1,0 +1,98 @@
+(
+	{
+		Type = Linker;
+		Identifier = "com.apple.pbx.linkers.ld";
+		Class = "PBXLinkerSpecificationLd";
+		Name = Ld;
+		Description = "Link executable using Apple Mach-O Linker (ld)";
+		IsAbstract = Yes;
+		BinaryFormats = (
+			"mach-o",
+		);
+		CommandLine = "[exec-path] [options] [special-args] -o $(OutputPath)";
+		RuleName = "Ld $(OutputPath) $(variant) $(arch)";
+		CommandIdentifier = "create:$(OutputPath)";
+		ExecDescription = "Link $(OutputFile:file)";
+		ProgressDescription = Linking;
+		InputFileTypes = (
+			"compiled.mach-o.objfile",
+			"compiled.mach-o.dylib",
+			"sourcecode.text-based-dylib-definition",
+			"wrapper.framework",
+			"archive.ar",
+		);
+		Outputs = (
+			"$(OutputPath)",
+		);
+		DependencyInfoFile = "";
+		CommandOutputParser = "XCGccCommandOutputParser";
+		"SupportsInputFileList" = Yes;
+		Options = (
+			{
+				Name = MCU;
+				CommandLineArgs = (
+					"-l:crt$(value).o",
+					"-mmcu=$(value)",
+					"-l$(value)",
+				);
+			},
+			{
+				Name = "LINK_WITH_STANDARD_LIBRARIES";
+				Type = Boolean;
+				DefaultValue = YES;
+				CommandLineArgs = {
+					YES = (
+						"-lc",
+						"-lm",
+						"-lgcc",
+						"-nostdlib",
+						"-v",
+					);
+					NO = (
+						"-nostdlib",
+					);
+				};
+			},
+			{
+				Name = MCUF;
+				CommandLineArgs = (
+					"-L=/usr/avr/lib/$(value)",
+					"-L=/usr/lib/gcc/avr/10.2.0/$(value)",
+				);
+			},
+			{
+				Name = SDKROOT;
+				Type = Path;
+				CommandLineArgs = (
+					"-Xlinker",
+					"--sysroot=$(value)",
+				);
+				IsInputDependency = Yes;
+			},
+			{
+				Name = "LD_TARGET_TRIPLE_ARCHS";
+				Type = StringList;
+				DefaultValue = "$(CURRENT_ARCH)";
+				CommandLineArgs = (
+					"-target",
+					"$(value)-$(LLVM_TARGET_TRIPLE_VENDOR)-$(LLVM_TARGET_TRIPLE_OS_VERSION)$(LLVM_TARGET_TRIPLE_SUFFIX)",
+				);
+				Condition = "$(USE_LLVM_TARGET_TRIPLES_FOR_LD) == YES";
+			},
+			{
+				Name = "__INPUT_FILE_LIST_PATH__";
+				Type = Path;
+				DefaultValue = "$(LINK_FILE_LIST_$(variant)_$(arch))";
+				CommandLineArgs = (
+					"@$(value)",
+				);
+				IsInputDependency = Yes;
+			},
+			{
+				Name = "LD_DEPENDENCY_INFO_FILE";
+				Type = Path;
+				DefaultValue = "";
+			},
+		);
+	},
+)

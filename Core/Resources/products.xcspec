@@ -1,0 +1,17 @@
+(
+	{
+		Type = ProductType;
+		Identifier = "com.atmel.product-type.application";
+		Class = "XCStandaloneExecutableProductType";
+		Name = Application;
+		Description = Application;
+		IconNamePrefix = TargetApp;
+		DefaultTargetName = Application;
+		"DefaultBuildProperties" = {
+			"FULL_PRODUCT_NAME" = "$(EXECUTABLE_NAME)";
+		};
+		PackageTypes = (
+			"com.atmel.package-type.elf",
+		);
+	},
+)

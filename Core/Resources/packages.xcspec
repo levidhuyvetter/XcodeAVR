@@ -1,0 +1,38 @@
+(
+	{
+		Type = PackageType;
+		Identifier = "com.atmel.package-type.elf";
+		Name = "Atmel ELF File";
+		Description = "Atmel ELF File";
+		DefaultBuildSettings = {
+			"EXECUTABLE_PREFIX" = "";
+			"EXECUTABLE_SUFFIX" = ".$(EXECUTABLE_EXTENSION)";
+			"EXECUTABLE_NAME" = "$(EXECUTABLE_PREFIX)$(PRODUCT_NAME)$(EXECUTABLE_VARIANT_SUFFIX)$(EXECUTABLE_SUFFIX)";
+			"EXECUTABLE_PATH" = "$(EXECUTABLE_NAME)";
+			"EXECUTABLE_EXTENSION" = elf;
+		};
+		ProductReference = {
+			FileType = "compiled";
+			Name = "$(EXECUTABLE_NAME)";
+			IsLaunchable = YES;
+		};
+	},
+	{
+		Type = PackageType;
+		Identifier = "com.atmel.package-type.hex";
+		Name = "Atmel HEX File";
+		Description = "Atmel HEX File";
+		DefaultBuildSettings = {
+			"EXECUTABLE_PREFIX" = "";
+			"EXECUTABLE_SUFFIX" = ".$(EXECUTABLE_EXTENSION)";
+			"EXECUTABLE_NAME" = "$(EXECUTABLE_PREFIX)$(PRODUCT_NAME)$(EXECUTABLE_VARIANT_SUFFIX)$(EXECUTABLE_SUFFIX)";
+			"EXECUTABLE_PATH" = "$(EXECUTABLE_NAME)";
+			"EXECUTABLE_EXTENSION" = hex;
+		};
+		ProductReference = {
+			FileType = "text";
+			Name = "$(EXECUTABLE_NAME)";
+			IsLaunchable = YES;
+		};
+	},
+)

@@ -1,0 +1,172 @@
+(
+	{
+		Identifier = "com.apple.compilers.llvm.clang.1_0";
+		Type = Compiler;
+		Class = "XCCompilerSpecificationClang";
+		Name = "Atmel Clang";
+		Description = "Atmel Clang compiler";
+		Vendor = Atmel;
+		Version = "11.0";
+		IsAbstract = NO;
+		ShowInCompilerSelectionPopup = YES;
+		InputFileTypes = (
+			"sourcecode.c.c",
+			"sourcecode.cpp.cpp",
+			"sourcecode.asm",
+		);
+		OptionConditionFlavors = (
+			arch,
+			sdk,
+		);
+		BuiltinJambaseRuleName = ProcessC;
+		ExecPath = "clang";
+        	ExecDescription = "Compile $(InputFileName)";
+        	ProgressDescription = "Compiling $(CommandProgressByType) source files";
+        	ExecDescriptionForPrecompile = "Precompile $(InputFileName)";
+        	ProgressDescriptionForPrecompile = "Precompiling $(CommandProgressByType) prefix headers";
+		CommandOutputParser = "XCSimpleBufferedCommandOutputParser";
+		SupportsHeadermaps = No;
+		DashIFlagAcceptsHeadermaps = No;
+		SupportsIsysroot = Yes;
+		SupportsPredictiveCompilation = No;
+		SupportsSeparateUserHeaderPaths = Yes;
+		Options = (
+			{
+				Name = "GCC_USE_STANDARD_INCLUDE_SEARCHING";
+				Type = Boolean;
+				DefaultValue = YES;
+				CommandLineArgs = {
+					YES = (
+						"-D__DELAY_BACKWARD_COMPATIBLE__",
+						"-I=/usr/avr/include",
+						"-nostdlibinc",
+					);
+					NO = ("-nostdlibinc");
+				};
+				Category = Language;
+			},
+			{
+				Name = FCPU;
+				CommandLineArgs = (
+					"-DF_CPU=$(value)",
+				);
+			},
+			{
+				Name = MCU;
+				CommandLineArgs = (
+					"-mmcu=$(value)",
+				);
+			},
+			{
+				Name = SDKROOT;
+				Type = Path;
+				CommandLineFlag = "-isysroot";
+			},
+			{
+				Name = "CLANG_TARGET_TRIPLE_ARCHS";
+				Type = StringList;
+				DefaultValue = "$(CURRENT_ARCH)";
+				CommandLineArgs = ( "-target", "$(value)-$(LLVM_TARGET_TRIPLE_VENDOR)-$(LLVM_TARGET_TRIPLE_OS_VERSION)$(LLVM_TARGET_TRIPLE_SUFFIX)" );
+				Condition = "$(USE_LLVM_TARGET_TRIPLES_FOR_CLANG) == YES";
+			},
+			{
+				Name = "GCC_OPTIMIZATION_LEVEL";
+				Type = Enumeration;
+				Values = (
+					0,
+					1,
+					2,
+					3,
+					s,
+					fast,
+					z,
+				);
+				DefaultValue = s;
+				CommandLineArgs = (
+					"-O$(value)",
+				);
+				Category = CodeGeneration;
+			},
+		);
+	},
+	{
+		Identifier = "com.apple.compilers.llvm.clang.1_0.compiler";
+		Type = Compiler;
+		BasedOn = "com.apple.compilers.llvm.clang.1_0";
+		Name = "Atmel Clang";
+		Description = "Atmel Clang compiler";
+		IsAbstract = YES;
+		ShowInCompilerSelectionPopup = NO;
+		"OptionConditionFlavors" = (
+			arch,
+			sdk,
+		);
+		FallbackTools = (
+			"com.apple.compilers.llvmgcc42",
+		);
+		ExecCPlusPlusLinkerPath = "clang++";
+		SupportsGeneratePreprocessedFile = YES;
+		SupportsGenerateAssemblyFile = YES;
+		CommandResultsPostprocessor = "XCClangResultsPostprocessor";
+		DependencyInfoFile = "";
+		DependencyInfoArgs = ();
+	},
+	{
+		Identifier = "com.apple.compilers.llvm.clang.1_0.analyzer";
+		Type = Compiler;
+		BasedOn = "com.apple.compilers.llvm.clang.1_0";
+		Name = "Static Analyzer";
+		Description = "Atmel Clang Static Analyzer";
+		ExecPath = "$(CLANG_ANALYZER_EXEC)";
+		RuleName = "Analyze$(CLANG_STATIC_ANALYZER_MODE_ACTION_$(CLANG_STATIC_ANALYZER_MODE)) $(InputFile) $(CURRENT_VARIANT) $(CURRENT_ARCH)";
+        ExecDescription = "Analyze$(StaticAnalyzerModeNameDescription) $(InputFileName)";
+        ProgressDescription = "Analyzing$(StaticAnalyzerModeNameDescription) $(CommandProgressByType) source files";
+		OutputDir = "$(CLANG_ANALYZER_OUTPUT_DIR)/StaticAnalyzer/$(PROJECT_NAME)/$(TARGET_NAME)/$(CURRENT_VARIANT)/$(CURRENT_ARCH)";
+		OutputFileExtension = plist;
+		OutputsAreProducts = YES;
+		IsAbstract = YES;
+		ShowInCompilerSelectionPopup = NO;
+		ShowOnlySelfDefinedProperties = YES;
+		SupportsAnalyzeFile = YES;
+		CommandOutputParser = (
+			("^([^:]*):([0-9]*):[0-9]*: [^:]*error: (.*)$", "emit-analyzer-warning"),
+			("^([^:]*):() [^:]*error: (.*)$", "emit-analyzer-warning"),
+			("^()()error: (.*)$", "emit-analyzer-warning"),
+		);
+		CommandResultsPostprocessor = "XCStaticAnalyzerResultsPostprocessor";
+		DependencyInfoFile = "$(OutputDir)/$(OutputFileBase).d";
+		DependencyInfoArgs = ("-MMD", "-MT", "dependencies", "-MF", "$(DependencyInfoFile)");
+		SourceFileOption = "--analyze";
+		InputFileTypes = (
+			"sourcecode.c.c",
+			"sourcecode.cpp.cpp",
+		);
+		Options = (
+			{
+				Name = MCU;
+				CommandLineArgs = (
+					"-mmcu=$(value)",
+				);
+			},
+			{
+				Name = CLANG_ANALYZER_OUTPUT_DIR;
+				Type = Path;
+				DefaultValue = "$(TEMP_DIR)";
+			},
+			{
+				Name = "CLANG_ANALYZER_OUTPUT";
+				Type = Enumeration;
+				Values = (
+					default,
+					"plist-multi-file",
+				);
+				DefaultValue = "plist-multi-file";
+				CommandLineArgs = {
+					default = ();
+					"<<otherwise>>" = ( "-Xclang", "-analyzer-output=$(value)", );
+				};
+				// Category is hidden.
+			},
+		);
+	},
+)

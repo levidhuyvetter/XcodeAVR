@@ -1,0 +1,22 @@
+(
+	{
+		Type = FileType;
+		Name = "Elf files";
+		Identifier = "compiled.elf";
+		BasedOn = compiled;
+		Extensions = (
+			elf,
+		);
+		UTI = "com.atmel.elf";
+	},
+	{
+		Type = FileType;
+		Name = "Hex files";
+		Identifier = "compiled.hex";
+		BasedOn = compiled;
+		Extensions = (
+			hex,
+		);
+		UTI = "com.atmel.hex";
+	},
+)

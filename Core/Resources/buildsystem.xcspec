@@ -1,0 +1,261 @@
+(
+	{
+		Type = BuildSystem;
+		Identifier = com.apple.build-system.native;
+		BasedOn = com.apple.build-system.core;
+		Name = "AVR Build System";
+		IsGlobalDomainInUI = Yes;
+		Options = (
+			{
+				Name = "FCPU";
+				Type = enum;
+				DisplayName = "Clock Frequency";
+				Description = "Clock Frequency";
+				Category = "Microcontroller";
+				DefaultValue = "16000000UL";
+				Values = (
+					{
+						DisplayName = "16 Mhz";
+						Value = "16000000UL";
+					},
+					{
+						DisplayName = "8 Mhz";
+						Value = "8000000UL";
+					},
+				);
+			},
+			{
+				Name = "MCU";
+				Type = enum;
+				DisplayName = "Device";
+				Description = "Microcontroller Device";
+				Category = "Microcontroller";
+				DefaultValue = "atmega328p";
+				Values = (
+					{
+						DisplayName = "Atmega328P";
+						Value = "atmega328p";
+					},
+					{
+						DisplayName = "Atmega328";
+						Value = "atmega328";
+					},
+				);
+			},
+			{
+				Name = "MCUF";
+				Type = enum;
+				DisplayName = "Device Family";
+				Description = "Microcontroller Device Family";
+				Category = "Microcontroller";
+				DefaultValue = "avr5";
+				Values = (
+					{
+						DisplayName = "AVR-5";
+						Value = "avr5";
+					},
+					{
+						DisplayName = "AVR-4";
+						Value = "avr4";
+					},
+				);
+			},
+			{
+				Name = "PROGRAMMER";
+				Type = enum;
+				DisplayName = "Programmer";
+				Description = "Programmer";
+				Category = "Uploading";
+				DefaultValue = "Arduino";
+				Values = (
+					"Arduino",
+					"STK500v1",
+					"AVR-ISP",
+				);
+			},
+			{
+				Name = "ERASE_FLASH";
+				Type = bool;
+				DisplayName = "Erase Flash";
+				Description = "Erase flash before uploading.";
+				Category = "Uploading";
+				DefaultValue = YES;
+			},
+
+			//#################### LOW FUSES #######################
+
+			{
+				Name = "CKDIV8";
+				Type = bool;
+				DisplayName = "Divide Clock By 8";
+				Description = "Divide clock by 8 internally.";
+				Category = "Fuses";
+				DefaultValue = YES;
+			},
+			{
+				Name = "CKOUT";
+				Type = bool;
+				DisplayName = "Clock Output";
+				Description = "Clock output on pin B0.";
+				Category = "Fuses";
+				DefaultValue = NO;
+			},
+			{
+				Name = "SUT";
+				Type = enum;
+				DisplayName = "Startup Time";
+				Description = "Additional startup time.";
+				Category = "Fuses";
+				DefaultValue = "65ms";
+				Values = (
+					"0ms",
+					"4.1ms",
+					"65ms",
+				);
+			},
+			{
+				Name = "CKSEL";
+				Type = enum;
+				DisplayName = "Clock Source";
+				Description = "Select clock source.";
+				Category = "Fuses";
+				DefaultValue = "Calibrated Internal RC Oscillator";
+				Values = (
+					"Low Power Crystal Oscillator",
+					"Full Swing Crystal Oscillator",
+					"Low Frequency Crystal Oscillator",
+					"Internal 128kHz RC Oscillator",
+					"Calibrated Internal RC Oscillator",
+					"External Clock",
+				);
+			},
+
+			//#################### HIGH FUSES #######################
+
+			{
+				Name = "RSTDISBL";
+				Type = bool;
+				DisplayName = "External Reset Disable";
+				Description = "Disable external reset.";
+				Category = "Fuses";
+				DefaultValue = NO;
+			},
+			{
+				Name = "DWEN";
+				Type = bool;
+				DisplayName = "DebugWIRE Enabled";
+				Description = "Enable debugWIRE.";
+				Category = "Fuses";
+				DefaultValue = NO;
+			},
+			{
+				Name = "SPIEN";
+				Type = bool;
+				DisplayName = "Enable Serial Programming";
+				Description = "Enable serial program and data downloading.";
+				Category = "Fuses";
+				DefaultValue = YES;
+			},
+			{
+				Name = "WDTON";
+				Type = bool;
+				DisplayName = "Watchdog Timer On";
+				Description = "Watchdog timer always on.";
+				Category = "Fuses";
+				DefaultValue = NO;
+			},
+			{
+				Name = "EESAVE";
+				Type = bool;
+				DisplayName = "Save EEPROM";
+				Description = "EEPROM memory is preserved through the chip erase.";
+				Category = "Fuses";
+				DefaultValue = NO;
+			},
+			{
+				Name = "BOOTRST";
+				Type = bool;
+				DisplayName = "Enable Reset Vector";
+				Description = "Reset vector enabled.";
+				Category = "Fuses";
+				DefaultValue = NO;
+			},
+			{
+				Name = "BOOTSZ";
+				Type = enum;
+				DisplayName = "Boot Size";
+				Description = "Select boot size.";
+				Category = "Fuses";
+				DefaultValue = "2048 Words";
+				Values = (
+					"256 Words",
+					"512 Words",
+					"1024 Words",
+					"2048 Words",
+				);
+			},
+
+			//#################### EXTENDED FUSES #######################
+
+			{
+				Name = "BODLEVEL";
+				Type = enum;
+				DisplayName = "Brownout Detector Level";
+				Description = "Brownout detector trigger level.";
+				Category = "Fuses";
+				DefaultValue = "Off";
+				Values = (
+					"Off",
+					"1.8V",
+					"2.7V",
+					"4.3V",
+				);
+			},
+
+			//#################### LOCK FUSES #######################
+
+			{
+				Name = "BLB";
+				Type = enum;
+				DisplayName = "Bootloader Lock Mode";
+				Description = "Bootloader protection level.";
+				Category = "Fuses";
+				DefaultValue = "Off";
+				Values = (
+					"Off",
+					"SPM",
+					"LPM",
+					"Both",
+				);
+			},
+			{
+				Name = "LB";
+				Type = enum;
+				DisplayName = "Application Lock Mode";
+				Description = "Application protection level.";
+				Category = "Fuses";
+				DefaultValue = "Off";
+				Values = (
+					"Off",
+					"SPM",
+					"LPM",
+					"Both",
+				);
+			},
+			{
+				Name = SUPPORTED_PLATFORMS;
+				Type = stringlist;
+				UIType = supportedplatforms;
+				DefaultValue = "";
+				Category = "Architectures";
+			},
+			{
+				Name = TOOLCHAINS;
+				Type = StringList;
+				DefaultValue = "com.atmel.toolchain.avr";
+				DisplayName = "Toolchains";
+				Category = "Toolchain";
+			},
+		);
+	},
+)
