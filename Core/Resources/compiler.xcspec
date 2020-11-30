@@ -38,7 +38,7 @@
 				CommandLineArgs = {
 					YES = (
 						"-D__DELAY_BACKWARD_COMPATIBLE__",
-						"-I=/usr/avr/include",
+						"-I=/usr/include",
 						"-nostdlibinc",
 					);
 					NO = ("-nostdlibinc");
