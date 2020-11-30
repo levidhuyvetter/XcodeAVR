@@ -205,7 +205,6 @@
 		DBD1ECA725744E0C00663033 /* AVR.platform */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AVR.platform; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD1ECBA25744E9500663033 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		DBD1ECBB25744E9500663033 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Info.plist; sourceTree = "<group>"; };
-		DBD1ED4125745B9000663033 /* certificate.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = certificate.p12; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,7 +223,6 @@
 		DBD1EC002574429D00663033 = {
 			isa = PBXGroup;
 			children = (
-				DBD1ED4125745B9000663033 /* certificate.p12 */,
 				DBD1EC1E2574476900663033 /* Headers */,
 				DBD1EC192574456800663033 /* Core */,
 				DBD1EC52257449B500663033 /* Template */,
