@@ -56,8 +56,7 @@
 			{
 				Name = MCUF;
 				CommandLineArgs = (
-					"-L=/usr/avr/lib/$(value)",
-					"-L=/usr/lib/gcc/avr/10.2.0/$(value)",
+					"-L=/usr/lib/$(value)",
 				);
 			},
 			{
