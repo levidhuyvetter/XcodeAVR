@@ -20,7 +20,7 @@ The project is currently in an experimental stage and serves as a bare minimum s
   - Base.xctemplate ("Template" target: defines a non-concrete template to serve as a base)
     - Application.xctemplate ("AppTemplate" target: defines a concrete template for a project that blinks an LED)
   - IDEAVRPlatfromSupportCore.ideplugin ("Core" target: integration with Xcode for devices, compilers, debuggers, etc...)
-- AVR.xctoolchain ("Toolchain" target: toolchain with clang and gcc built with AVR target)
+- AVR.xctoolchain (Available as a separate repository because of filesize)
 
 ## Contributing
 
@@ -31,14 +31,22 @@ A simple self-signed certificate with private key is included in the repository,
 
 - Open certificate.p12 with password "XcodeAVR" and install to your login keychain;
 - Make a copy of Xcode.app;
-```sudo cp /Applications/Xcode.app /Applications.XcodeAVR.app```
+```
+sudo cp /Applications/Xcode.app /Applications.XcodeAVR.app
+```
 - Re-codesign your copy of Xcode;
-```sudo codesign -f -s XcodeAVR /Applications/XcodeAVR.app```
+```
+sudo codesign -f -s XcodeAVR /Applications/XcodeAVR.app
+```
 
 ### Setting up the project to use XcodeAVR.app
 
 - In the build settings for the "Core" target, ensure it is set up to sign with the XcodeAVR certificate;
 - Edit the "Platform" scheme and set /Applications/XcodeAVR.app as the executable to run and debug;
 - If you have named your copy of Xcode differently or it is in a different location, you will have to adjust the "Install Platform" build phase in the "Platform" target;
-- Build the "Toolchain" target and copy AVR.toolchain to ~/Library/Developer/Toolchains (or equivalent system directory);
+- Clone AVR.xctoolchain to /Library/Developer/Toolchains (or equivalent user directory);
+```
+cd /Library/Developer/Toolchains
+git clone https://github.com/levidhuyvetter/AVR.xctoolchain
+```
 - You can now edit the project in your main copy of Xcode, once you press run it will copy the platform bundle to your copy of Xcode and then run and debug the copy;
