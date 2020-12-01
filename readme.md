@@ -20,7 +20,7 @@ The project is currently in an experimental stage and serves as a bare minimum s
   - Base.xctemplate ("Template" target: defines a non-concrete template to serve as a base)
     - Application.xctemplate ("AppTemplate" target: defines a concrete template for a project that blinks an LED)
   - IDEAVRPlatfromSupportCore.ideplugin ("Core" target: integration with Xcode for devices, compilers, debuggers, etc...)
-- AVR.xctoolchain (Available as a separate repository because of filesize)
+- AVR.xctoolchain (Available as a separate download because of filesize)
 
 ## Contributing
 
@@ -44,9 +44,5 @@ sudo codesign -f -s XcodeAVR /Applications/XcodeAVR.app
 - In the build settings for the "Core" target, ensure it is set up to sign with the XcodeAVR certificate;
 - Edit the "Platform" scheme and set /Applications/XcodeAVR.app as the executable to run and debug;
 - If you have named your copy of Xcode differently or it is in a different location, you will have to adjust the "Install Platform" build phase in the "Platform" target;
-- Clone AVR.xctoolchain to /Library/Developer/Toolchains (or equivalent user directory);
-```
-cd /Library/Developer/Toolchains
-git clone https://github.com/levidhuyvetter/AVR.xctoolchain
-```
+- Download AVR.xctoolchain from the <a href="https://github.com/levidhuyvetter/XcodeAVR/releases/latest">latest release</a> and copy to /Library/Developer/Toolchains (or equivalent user directory);
 - You can now edit the project in your main copy of Xcode, once you press run it will copy the platform bundle to your copy of Xcode and then run and debug the copy;
