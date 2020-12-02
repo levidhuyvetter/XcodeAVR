@@ -12,6 +12,10 @@ The project is currently in an experimental stage and serves as a bare minimum s
 - [ ] Get Xcode to use avrdude to upload to AVR device on run;
 - [ ] Get Xcode to use the AVR-GDB debugger;
 - [ ] Get Xcode to use debug view as a serial monitor;
+- [ ] Create a graphical simulator that uses simulavr as a run destination;
+- [ ] Parse SDK with Arduino libraries and ability to compile ino files;
+- [ ] Get swift to compile with AVR as target;
+- [ ] Create swift libraries for AVR;
 
 ## Project Structure
 
