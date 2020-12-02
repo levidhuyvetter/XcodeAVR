@@ -67,6 +67,10 @@ class DVTAVRDevice: DVTDevice {
 		return ""
 	}
 
+	override var extraDebuggingRuntimeDylibPath: String! {
+		return ""
+	}
+
 	override func supportedArchitectures(forBuildableContext v1: Any!, buildParameters v2: Any!, error v3: AutoreleasingUnsafeMutablePointer<AnyObject?>!) -> Any! {
 		return self.supportedArchitectures
 	}
