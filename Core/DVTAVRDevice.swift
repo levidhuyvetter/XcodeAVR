@@ -62,6 +62,10 @@ class DVTAVRDevice: DVTDevice {
 	override func wantsDeviceOperationActivityReporting() -> Int8 {
 		return 0
 	}
+	
+	override var recordedFramesLibdispatchIntrospectionDylibPath: String! {
+		return ""
+	}
 
 	override func supportedArchitectures(forBuildableContext v1: Any!, buildParameters v2: Any!, error v3: AutoreleasingUnsafeMutablePointer<AnyObject?>!) -> Any! {
 		return self.supportedArchitectures
