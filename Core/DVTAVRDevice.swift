@@ -23,6 +23,32 @@ class DVTAVRDevice: DVTDevice {
 		self.deviceType = DVTDeviceType.deviceType(withIdentifier: "Xcode.DeviceType.AVR") as? DVTDeviceType
 		self.isCloudDevice = 0
 		self.operatingSystemVersionWithBuildNumber = "None"
+		
+//		let programmer = strdup("stk500v1")
+//		let port = strdup(self.identifier)
+//		let partdesc = strdup("m328p")
+//
+//		let pgm = locate_programmer(programmers, programmer)
+//		pgm?.pointee.initpgm(pgm)
+//		pgm?.pointee.setup(pgm)
+//
+//		let prt = locate_part(part_list, partdesc)
+//		avr_initmem(prt)
+//
+//		pgm?.pointee.baudrate = 19200
+//		let _ = pgm?.pointee.open(pgm, port)
+//		pgm?.pointee.enable(pgm)
+//		let _ = pgm?.pointee.rdy_led(pgm, OFF)
+//		let _ = pgm?.pointee.err_led(pgm, OFF)
+//		let _ = pgm?.pointee.pgm_led(pgm, OFF)
+//		let _ = pgm?.pointee.vfy_led(pgm, OFF)
+//
+//		let _ = pgm?.pointee.initialize(pgm, prt)
+//
+//		let _ = pgm?.pointee.rdy_led(pgm, ON)
+//
+//		let _ = avr_signature(pgm, prt)
+//		let sig = avr_locate_mem(prt, strdup("signature"))
 	}
 
 	override var hasConnection: Bool { true }
