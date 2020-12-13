@@ -2,6 +2,7 @@
 
 @class DVTDeviceType;
 @class DVTDevice;
+@class DVTOnboardingTutorialController;
 
 //struct DVTMacroValueAssignment; /* Incomplete type */
 //
@@ -1279,10 +1280,10 @@
 //
 ///*****************************************************************/
 //
-//@protocol DVTSimpleSerialization
-//- (id)dvt_initFromDeserializer:(id)v1;
-//- (void)dvt_writeToSerializer:(id)v1;
-//@end
+@protocol DVTSimpleSerialization
+- (id)dvt_initFromDeserializer:(id)v1;
+- (void)dvt_writeToSerializer:(id)v1;
+@end
 //
 //
 ///*****************************************************************/
@@ -1636,9 +1637,9 @@
 //
 ///*****************************************************************/
 //
-//@protocol DVTDiffHashing
-//- (unsigned long long)dvt_diffHashForDataSource:(id)v1;
-//@end
+@protocol DVTDiffHashing
+- (unsigned long long)dvt_diffHashForDataSource:(id)v1;
+@end
 //
 //
 ///*****************************************************************/
@@ -1726,20 +1727,20 @@
 //
 ///*****************************************************************/
 //
-//@protocol DVTPropertyListValue<NSObject,NSSecureCoding,NSCopying>
-//@property (readonly) NSString * stringValue;
-//@property (readonly) NSData * dataValue;
-//@property (readonly) NSNumber * numberValue;
-//@property (readonly) NSDate * dateValue;
-//@property (readonly) NSArray * arrayValue;
-//@property (readonly) NSDictionary * dictionaryValue;
-//- (id)stringValue;
-//- (id)dataValue;
-//- (id)numberValue;
-//- (id)dateValue;
-//- (id)arrayValue;
-//- (id)dictionaryValue;
-//@end
+@protocol DVTPropertyListValue<NSObject,NSSecureCoding,NSCopying>
+@property (readonly) NSString * stringValue;
+@property (readonly) NSData * dataValue;
+@property (readonly) NSNumber * numberValue;
+@property (readonly) NSDate * dateValue;
+@property (readonly) NSArray * arrayValue;
+@property (readonly) NSDictionary * dictionaryValue;
+- (id)stringValue;
+- (id)dataValue;
+- (id)numberValue;
+- (id)dateValue;
+- (id)arrayValue;
+- (id)dictionaryValue;
+@end
 //
 //
 ///*****************************************************************/
@@ -2078,7 +2079,7 @@
 //
 ///*****************************************************************/
 //
-//@interface NSObject (DVTXMLArchiving)<DVTSimpleSerialization>
+@interface NSObject (DVTXMLArchiving)<DVTSimpleSerialization>
 //@property (setter=dvt_setLeakingFatal:) char dvt_isLeakingFatal;
 //@property (nonatomic,readonly) NSArray * dvt_reflectingDebugDescriptionKeyPaths;
 //+ (void)dvt_cancelAllObservingTokensForOwner:(id)v1;
@@ -2103,7 +2104,7 @@
 //- (void)dvt_registerValueChangedCallback:(SEL)v1 forKeyPath:(id)v2;
 //- (void)dvt_unregisterValueChangedCallbackForKeyPath:(id)v1 ofObject:(id)v2;
 //- (void)dvt_unregisterValueChangedCallbackForKeyPath:(id)v1;
-//- (void)dvt_addObserverForKeyPath:(id)v1 options:(unsigned long long)v2 owner:(id)v3 withHandlerBlock:(void (^ /* unknown block signature */)(void))v4;
+- (void)dvt_addObserverForKeyPath:(id)v1 options:(unsigned long long)v2 owner:(id)v3 withHandlerBlock:(void (^)(DVTDevice*,DVTOnboardingTutorialController*))v4;
 //- (id)_dvt_newObserverForKeyPath:(id)v1 options:(unsigned long long)v2 owner:(id)v3 creationBacktrace:(id)v4 withHandlerBlock:(void (^ /* unknown block signature */)(void))v5;
 //- (id)dvt_newObserverForKeyPath:(id)v1 options:(unsigned long long)v2 owner:(id)v3 withHandlerBlock:(void (^ /* unknown block signature */)(void))v4;
 //- (id)dvt_newObserverForKeyPath:(id)v1 options:(unsigned long long)v2 withHandlerBlock:(void (^ /* unknown block signature */)(void))v3;
@@ -2155,7 +2156,7 @@
 //- (void)dvt_encodeWithXMLArchiver:(id)v1 version:(id)v2;
 //- (void)dvt_encodeAttributesWithXMLArchiver:(id)v1 version:(id)v2;
 //- (void)dvt_encodeRelationshipsWithXMLArchiver:(id)v1 version:(id)v2;
-//@end
+@end
 //
 //
 ///*****************************************************************/
@@ -2383,7 +2384,7 @@
 //
 ///*****************************************************************/
 //
-//@interface NSArray (DVTInvalidationZombie_Private)<DVTPropertyListValue,DVTDiffHashing>
+@interface NSArray (DVTInvalidationZombie_Private)<DVTPropertyListValue,DVTDiffHashing>
 //@property (readonly) NSString * stringValue;
 //@property (readonly) NSData * dataValue;
 //@property (readonly) NSNumber * numberValue;
@@ -2397,7 +2398,7 @@
 //+ (id)dvt_arrayWithRepetitions:(long long)v1 ofObject:(id)v2;
 //+ (id)dvt_arrayWithObjectIfNonNil:(id)v1;
 //- (unsigned long long)dvt_diffHashForDataSource:(id)v1;
-//- (void)dvt_addObserverForKeyPath:(id)v1 options:(unsigned long long)v2 owner:(id)v3 withHandlerBlock:(void (^ /* unknown block signature */)(void))v4;
+- (void)dvt_addObserverForKeyPath:(id)v1 options:(unsigned long long)v2 owner:(id)v3 withHandlerBlock:(void (^ /* unknown block signature */)(void))v4;
 //- (id)dvt_newObserverForKeyPath:(id)v1 options:(unsigned long long)v2 owner:(id)v3 withHandlerBlock:(void (^ /* unknown block signature */)(void))v4;
 //- (id)dvt_newObserverForKeyPath:(id)v1 options:(unsigned long long)v2 withHandlerBlock:(void (^ /* unknown block signature */)(void))v3;
 //- (struct _NSRange)dvt_rangeOfArray:(id)v1 inRange:(struct _NSRange)v2;
@@ -2464,7 +2465,7 @@
 //- (void)_dvt_addObserver:(id)v1 toObjectsAtIndexes:(id)v2 forKeyPath:(id)v3 options:(unsigned long long)v4 context:(void *)v5;
 //- (void)_dvt_removeObserver:(id)v1 fromObjectsAtIndexes:(id)v2 forKeyPath:(id)v3 context:(void *)v4;
 //- (void)_dvt_removeObserver:(id)v1 fromObjectsAtIndexes:(id)v2 forKeyPath:(id)v3;
-//@end
+@end
 //
 //
 ///*****************************************************************/

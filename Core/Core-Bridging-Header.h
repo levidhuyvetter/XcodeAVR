@@ -5,3 +5,4 @@
 #import "DVTFoundation.h"
 #import "IDEFoundation.h"
 #import "DVTDeviceKit.h"
+#include <libavrdude.h>

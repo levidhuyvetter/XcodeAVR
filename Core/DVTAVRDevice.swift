@@ -8,56 +8,35 @@
 import Cocoa
 
 class DVTAVRDevice: DVTDevice {
-	override init() {
+	var pgm:AVRDProgrammer? = nil
+	var paired = false
+	var signature:(UInt8,UInt8,UInt8) { self.pgm?.signature ?? (0,0,0) }
+	var locator:DVTAVRDeviceLocator? = nil
+	
+	init(id:String) {
 		super.init()
-		self.identifier = "/dev/cu.SLAB_USBtoUART"
+		self.identifier = id
 		self.platform = DVTPlatform.platform(forIdentifier: "com.atmel.platform.avr") as? DVTPlatform
-		self.name = "Atmega328P"
-		self.modelName = "Microchip Atmega328P"
-		self.available = 1
+		self.name = id.replacingOccurrences(of: "cu.", with: "", options: [], range: nil)
+		self.modelName = "None"
 		self.nativeArchitecture = "avr"
 		self.supportedArchitectures = ["avr"]
-		self.ignored = 0
 		self.modelUTI = "com.apple.mac"
-		self.usedForDevelopment = 1
 		self.deviceType = DVTDeviceType.deviceType(withIdentifier: "Xcode.DeviceType.AVR") as? DVTDeviceType
-		self.isCloudDevice = 0
 		self.operatingSystemVersionWithBuildNumber = "None"
-		
-//		let programmer = strdup("stk500v1")
-//		let port = strdup(self.identifier)
-//		let partdesc = strdup("m328p")
-//
-//		let pgm = locate_programmer(programmers, programmer)
-//		pgm?.pointee.initpgm(pgm)
-//		pgm?.pointee.setup(pgm)
-//
-//		let prt = locate_part(part_list, partdesc)
-//		avr_initmem(prt)
-//
-//		pgm?.pointee.baudrate = 19200
-//		let _ = pgm?.pointee.open(pgm, port)
-//		pgm?.pointee.enable(pgm)
-//		let _ = pgm?.pointee.rdy_led(pgm, OFF)
-//		let _ = pgm?.pointee.err_led(pgm, OFF)
-//		let _ = pgm?.pointee.pgm_led(pgm, OFF)
-//		let _ = pgm?.pointee.vfy_led(pgm, OFF)
-//
-//		let _ = pgm?.pointee.initialize(pgm, prt)
-//
-//		let _ = pgm?.pointee.rdy_led(pgm, ON)
-//
-//		let _ = avr_signature(pgm, prt)
-//		let sig = avr_locate_mem(prt, strdup("signature"))
+		self.available = 0
 	}
 
-	override var hasConnection: Bool { true }
-	override var hasWiredConnection: Bool { true }
-	override var hasWirelessConnection: Bool { false }
+	override var deviceWindowCategory: Int32 { self.paired ? super.deviceWindowCategory : 5 } //0=connected,1=nowhere,2=paironly,3=ignored,4=disconnected,5=discovered,6=unknown
+		
+	override var deviceIsBusy: Bool { false }
+	override var isPaired: Bool { self.paired }
+	override var hasWiredConnection: Bool { self.pgm?.connected ?? false }
+	
+	
 	override var allowsManagedStateControl: Int8 { 0 }
 	override var canIgnore: Int8 { 1 } //Show as run destination checkbox enabled/disabled
 	override var concreteDevice: Int8 { 1 }
-	override var nameForDeveloperPortal: String! { self.name }
 	override var image: NSImage! {
 		let big = Bundle(for: type(of: self)).image(forResource: "Chip")
 		let small = Bundle(for: type(of: self)).image(forResource: "MiniChip")
@@ -65,19 +44,26 @@ class DVTAVRDevice: DVTDevice {
 		return big
 	}
 	override var dvt_sourceListImage: NSImage! { Bundle(for: type(of: self)).image(forResource: "SidebarChip") }
-	override var isRunningSupportedOS: Int8 { 1 }
-	override var isPaired: Bool { true }
 	override var canRename: Int8 { 1 }
-	override var deviceLocation: URL! { URL(fileURLWithPath: "/") }
-	override var canRunExecutables: Int8 { 1 }
+	override var deviceLocation: URL! { URL(fileURLWithPath: "/dev/\(self.identifier!)") }
+//	override var canRunExecutables: Int8 { 1 }
+	override var dvt_labeledSerialNumber: String! { return "Signature: \(String(format: "%02X %02X %02X", self.signature.0, self.signature.1, self.signature.2))" }
 	
-	override var runsRemoteFromHostLauncher: Int8 { 1 }
-	override var canRunMultipleInstancesPerApp: Int8 { 1 }
+	//override var runsRemoteFromHostLauncher: Int8 { 1 }
+	//override var canRunMultipleInstancesPerApp: Int8 { 1 }
 
 	override func renameDevice(_ v1: Any!) {
 		if let new = v1 as? String {
 			self.name = new
 		}
+	}
+	
+	override func extendedPairWithError(_ v1: AutoreleasingUnsafeMutablePointer<AnyObject?>!, extendedInformationHandler v2: (() -> Void)!) -> Bool {
+		guard let wc = DVTDevicesWindowController.shared() else { return false }
+		DispatchQueue.main.async {
+			wc.beginOnboardingTutorialSheet()
+		}
+		return true
 	}
 	
 	override func services(matching v1: DVTDeviceCapability!) -> Set<AnyHashable>! {
@@ -106,15 +92,27 @@ class DVTAVRDevice: DVTDevice {
 		return NSSet(object: sdk)
 	}
 	
-	override func startOperation() -> Any! {
-		return super.startOperation()
+	override func forget() {
+		self.paired = false
+		self.pgm?.disconnect()
+		self.pgm = nil
+		self.locator?.delete(device: self.identifier)
 	}
 	
-	override func runExecutable(atPath v1: Any!, withArguments v2: Any!, environment v3: Any!, options v4: Any!, terminationHandler v5: (() -> Void)!) -> Any! {
-		return super.runExecutable(atPath: v1, withArguments: v2, environment: v3, options: v4, terminationHandler: v5)
+	override func shouldPresent(forBuildableContext v1: Any!, buildParameters v2: Any!, error v3: AutoreleasingUnsafeMutablePointer<AnyObject?>!) -> Int8 {
+		return 0
 	}
 	
-	override func endOperation(_ v1: Any!) {
-		super.endOperation(v1)
+	func pair(name:String, programmer:AVRDProgrammer) -> Bool {
+		self.name = name
+		self.pgm = programmer
+		self.locator?.save(device: self)
+		
+		//DispatchQueue.global(qos: .userInitiated).async {
+			try! self.pgm!.connect()
+			try! self.pgm!.verifiySignature()
+		//}
+				
+		return true
 	}
 }

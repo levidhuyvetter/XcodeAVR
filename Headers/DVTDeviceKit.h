@@ -1,140 +1,25 @@
-//struct CGRect {
-//    struct CGPoint field_1;
-//    struct CGSize field_2;
-//};
-//
-//struct _NSRange {
-//    unsigned long long field_1;
-//    unsigned long long field_2;
-//};
-//
-//struct CGPoint {
-//    double field_1;
-//    double field_2;
-//};
-//
-//struct CGSize {
-//    double field_1;
-//    double field_2;
-//};
-//
-//struct _NSZone {
-//};
-//
+#import <Cocoa/Cocoa.h>
+
+@class DVTOnboardingTutorialController;
+@class DVTPageController;
+
 //
 //
 ///*****************************************************************/
 //
-//@protocol NSObject
-//@property (readonly) unsigned long long hash;
-//@property (readonly) Class superclass;
-//@property (readonly,copy) NSString * description;
-//@property (readonly,copy) NSString * debugDescription;
-//- (char)isEqual:(id)v1;
-//- (Class)class;
-//- (id)self;
-//- (id)performSelector:(SEL)v1;
-//- (id)performSelector:(SEL)v1 withObject:(id)v2;
-//- (id)performSelector:(SEL)v1 withObject:(id)v2 withObject:(id)v3;
-//- (char)isProxy;
-//- (char)isKindOfClass:(Class)v1;
-//- (char)isMemberOfClass:(Class)v1;
-//- (char)conformsToProtocol:(id)v1;
-//- (char)respondsToSelector:(SEL)v1;
-//- (id)retain;
-//- (oneway  void)release;
-//- (id)autorelease;
-//- (unsigned long long)retainCount;
-//- (struct _NSZone *)zone;
-//- (unsigned long long)hash;
-//- (Class)superclass;
-//- (id)description;
-//
-//@optional
-//- (id)debugDescription;
-//@end
+@protocol DVTDevicesListViewControllerDelegate<NSObject>
+- (void)didFinishLoadingDevices:(id)v1;
+@end
 //
 //
 ///*****************************************************************/
 //
-//@protocol DVTDevicesListViewControllerDelegate<NSObject>
-//- (void)didFinishLoadingDevices:(id)v1;
-//@end
+
 //
 //
 ///*****************************************************************/
 //
-//@protocol NSMenuDelegate<NSObject>
-//
-//@optional
-//- (void)menuNeedsUpdate:(id)v1;
-//- (long long)numberOfItemsInMenu:(id)v1;
-//- (char)menu:(id)v1 updateItem:(id)v2 atIndex:(long long)v3 shouldCancel:(char)v4;
-//- (char)menuHasKeyEquivalent:(id)v1 forEvent:(id)v2 target:(id *)v3 action:(SEL *)v4;
-//- (void)menuWillOpen:(id)v1;
-//- (void)menuDidClose:(id)v1;
-//- (void)menu:(id)v1 willHighlightItem:(id)v2;
-//- (struct CGRect)confinementRectForMenu:(id)v1 onScreen:(id)v2;
-//@end
-//
-//
-///*****************************************************************/
-//
-//@protocol NSWindowDelegate<NSObject>
-//
-//@optional
-//- (char)windowShouldClose:(id)v1;
-//- (id)windowWillReturnFieldEditor:(id)v1 toObject:(id)v2;
-//- (struct CGSize)windowWillResize:(id)v1 toSize:(struct CGSize)v2;
-//- (struct CGRect)windowWillUseStandardFrame:(id)v1 defaultFrame:(struct CGRect)v2;
-//- (char)windowShouldZoom:(id)v1 toFrame:(struct CGRect)v2;
-//- (id)windowWillReturnUndoManager:(id)v1;
-//- (struct CGRect)window:(id)v1 willPositionSheet:(id)v2 usingRect:(struct CGRect)v3;
-//- (char)window:(id)v1 shouldPopUpDocumentPathMenu:(id)v2;
-//- (char)window:(id)v1 shouldDragDocumentWithEvent:(id)v2 from:(struct CGPoint)v3 withPasteboard:(id)v4;
-//- (struct CGSize)window:(id)v1 willUseFullScreenContentSize:(struct CGSize)v2;
-//- (unsigned long long)window:(id)v1 willUseFullScreenPresentationOptions:(unsigned long long)v2;
-//- (id)customWindowsToEnterFullScreenForWindow:(id)v1;
-//- (void)window:(id)v1 startCustomAnimationToEnterFullScreenWithDuration:(double)v2;
-//- (void)windowDidFailToEnterFullScreen:(id)v1;
-//- (id)customWindowsToExitFullScreenForWindow:(id)v1;
-//- (void)window:(id)v1 startCustomAnimationToExitFullScreenWithDuration:(double)v2;
-//- (id)customWindowsToEnterFullScreenForWindow:(id)v1 onScreen:(id)v2;
-//- (void)window:(id)v1 startCustomAnimationToEnterFullScreenOnScreen:(id)v2 withDuration:(double)v3;
-//- (void)windowDidFailToExitFullScreen:(id)v1;
-//- (struct CGSize)window:(id)v1 willResizeForVersionBrowserWithMaxPreferredSize:(struct CGSize)v2 maxAllowedSize:(struct CGSize)v3;
-//- (void)window:(id)v1 willEncodeRestorableState:(id)v2;
-//- (void)window:(id)v1 didDecodeRestorableState:(id)v2;
-//- (void)windowDidResize:(id)v1;
-//- (void)windowDidExpose:(id)v1;
-//- (void)windowWillMove:(id)v1;
-//- (void)windowDidMove:(id)v1;
-//- (void)windowDidBecomeKey:(id)v1;
-//- (void)windowDidResignKey:(id)v1;
-//- (void)windowDidBecomeMain:(id)v1;
-//- (void)windowDidResignMain:(id)v1;
-//- (void)windowWillClose:(id)v1;
-//- (void)windowWillMiniaturize:(id)v1;
-//- (void)windowDidMiniaturize:(id)v1;
-//- (void)windowDidDeminiaturize:(id)v1;
-//- (void)windowDidUpdate:(id)v1;
-//- (void)windowDidChangeScreen:(id)v1;
-//- (void)windowDidChangeScreenProfile:(id)v1;
-//- (void)windowDidChangeBackingProperties:(id)v1;
-//- (void)windowWillBeginSheet:(id)v1;
-//- (void)windowDidEndSheet:(id)v1;
-//- (void)windowWillStartLiveResize:(id)v1;
-//- (void)windowDidEndLiveResize:(id)v1;
-//- (void)windowWillEnterFullScreen:(id)v1;
-//- (void)windowDidEnterFullScreen:(id)v1;
-//- (void)windowWillExitFullScreen:(id)v1;
-//- (void)windowDidExitFullScreen:(id)v1;
-//- (void)windowWillEnterVersionBrowser:(id)v1;
-//- (void)windowDidEnterVersionBrowser:(id)v1;
-//- (void)windowWillExitVersionBrowser:(id)v1;
-//- (void)windowDidExitVersionBrowser:(id)v1;
-//- (void)windowDidChangeOcclusionState:(id)v1;
-//@end
+
 //
 //
 ///*****************************************************************/
@@ -200,65 +85,12 @@
 //
 ///*****************************************************************/
 //
-//@protocol NSControlTextEditingDelegate<NSObject>
-//
-//@optional
-//- (void)controlTextDidBeginEditing:(id)v1;
-//- (void)controlTextDidEndEditing:(id)v1;
-//- (void)controlTextDidChange:(id)v1;
-//- (char)control:(id)v1 textShouldBeginEditing:(id)v2;
-//- (char)control:(id)v1 textShouldEndEditing:(id)v2;
-//- (char)control:(id)v1 didFailToFormatString:(id)v2 errorDescription:(id)v3;
-//- (void)control:(id)v1 didFailToValidatePartialString:(id)v2 errorDescription:(id)v3;
-//- (char)control:(id)v1 isValidObject:(id)v2;
-//- (char)control:(id)v1 textView:(id)v2 doCommandBySelector:(SEL)v3;
-//- (id)control:(id)v1 textView:(id)v2 completions:(id)v3 forPartialWordRange:(struct _NSRange)v4 indexOfSelectedItem:(long long *)v5;
-//@end
+
 //
 //
 ///*****************************************************************/
 //
-//@protocol NSOutlineViewDelegate<NSControlTextEditingDelegate>
-//
-//@optional
-//- (id)outlineView:(id)v1 viewForTableColumn:(id)v2 item:(id)v3;
-//- (id)outlineView:(id)v1 rowViewForItem:(id)v2;
-//- (void)outlineView:(id)v1 didAddRowView:(id)v2 forRow:(long long)v3;
-//- (void)outlineView:(id)v1 didRemoveRowView:(id)v2 forRow:(long long)v3;
-//- (void)outlineView:(id)v1 willDisplayCell:(id)v2 forTableColumn:(id)v3 item:(id)v4;
-//- (char)outlineView:(id)v1 shouldEditTableColumn:(id)v2 item:(id)v3;
-//- (char)selectionShouldChangeInOutlineView:(id)v1;
-//- (char)outlineView:(id)v1 shouldSelectItem:(id)v2;
-//- (id)outlineView:(id)v1 selectionIndexesForProposedSelection:(id)v2;
-//- (char)outlineView:(id)v1 shouldSelectTableColumn:(id)v2;
-//- (void)outlineView:(id)v1 mouseDownInHeaderOfTableColumn:(id)v2;
-//- (void)outlineView:(id)v1 didClickTableColumn:(id)v2;
-//- (void)outlineView:(id)v1 didDragTableColumn:(id)v2;
-//- (id)outlineView:(id)v1 toolTipForCell:(id)v2 rect:(struct CGRect *)v3 tableColumn:(id)v4 item:(id)v5 mouseLocation:(struct CGPoint)v6;
-//- (double)outlineView:(id)v1 heightOfRowByItem:(id)v2;
-//- (id)outlineView:(id)v1 tintConfigurationForItem:(id)v2;
-//- (id)outlineView:(id)v1 typeSelectStringForTableColumn:(id)v2 item:(id)v3;
-//- (id)outlineView:(id)v1 nextTypeSelectMatchFromItem:(id)v2 toItem:(id)v3 forString:(id)v4;
-//- (char)outlineView:(id)v1 shouldTypeSelectForEvent:(id)v2 withCurrentSearchString:(id)v3;
-//- (char)outlineView:(id)v1 shouldShowCellExpansionForTableColumn:(id)v2 item:(id)v3;
-//- (char)outlineView:(id)v1 shouldTrackCell:(id)v2 forTableColumn:(id)v3 item:(id)v4;
-//- (id)outlineView:(id)v1 dataCellForTableColumn:(id)v2 item:(id)v3;
-//- (char)outlineView:(id)v1 isGroupItem:(id)v2;
-//- (char)outlineView:(id)v1 shouldExpandItem:(id)v2;
-//- (char)outlineView:(id)v1 shouldCollapseItem:(id)v2;
-//- (void)outlineView:(id)v1 willDisplayOutlineCell:(id)v2 forTableColumn:(id)v3 item:(id)v4;
-//- (double)outlineView:(id)v1 sizeToFitWidthOfColumn:(long long)v2;
-//- (char)outlineView:(id)v1 shouldReorderColumn:(long long)v2 toColumn:(long long)v3;
-//- (char)outlineView:(id)v1 shouldShowOutlineCellForItem:(id)v2;
-//- (void)outlineViewSelectionDidChange:(id)v1;
-//- (void)outlineViewColumnDidMove:(id)v1;
-//- (void)outlineViewColumnDidResize:(id)v1;
-//- (void)outlineViewSelectionIsChanging:(id)v1;
-//- (void)outlineViewItemWillExpand:(id)v1;
-//- (void)outlineViewItemDidExpand:(id)v1;
-//- (void)outlineViewItemWillCollapse:(id)v1;
-//- (void)outlineViewItemDidCollapse:(id)v1;
-//@end
+
 //
 //
 ///*****************************************************************/
@@ -283,69 +115,22 @@
 //
 ///*****************************************************************/
 //
-//@protocol AKAppleIDAuthenticationDelegate<NSObject>
-//
-//@optional
-//- (char)authenticationController:(id)v1 shouldContinueWithAuthenticationResults:(id)v2 error:(id)v3 forContext:(id)v4;
-//- (void)authenticationController:(id)v1 shouldContinueWithAuthenticationResults:(id)v2 error:(id)v3 forContext:(id)v4 completion:(void (^ /* unknown block signature */)(void))v5;
-//@end
-//
-//
-///*****************************************************************/
-//
-//@protocol NSTableViewDataSource<NSObject>
-//
-//@optional
-//- (long long)numberOfRowsInTableView:(id)v1;
-//- (id)tableView:(id)v1 objectValueForTableColumn:(id)v2 row:(long long)v3;
-//- (void)tableView:(id)v1 setObjectValue:(id)v2 forTableColumn:(id)v3 row:(long long)v4;
-//- (void)tableView:(id)v1 sortDescriptorsDidChange:(id)v2;
-//- (id)tableView:(id)v1 pasteboardWriterForRow:(long long)v2;
-//- (void)tableView:(id)v1 draggingSession:(id)v2 willBeginAtPoint:(struct CGPoint)v3 forRowIndexes:(id)v4;
-//- (void)tableView:(id)v1 draggingSession:(id)v2 endedAtPoint:(struct CGPoint)v3 operation:(unsigned long long)v4;
-//- (void)tableView:(id)v1 updateDraggingItemsForDrag:(id)v2;
-//- (char)tableView:(id)v1 writeRowsWithIndexes:(id)v2 toPasteboard:(id)v3;
-//- (unsigned long long)tableView:(id)v1 validateDrop:(id)v2 proposedRow:(long long)v3 proposedDropOperation:(unsigned long long)v4;
-//- (char)tableView:(id)v1 acceptDrop:(id)v2 row:(long long)v3 dropOperation:(unsigned long long)v4;
-//- (id)tableView:(id)v1 namesOfPromisedFilesDroppedAtDestination:(id)v2 forDraggedRowsWithIndexes:(id)v3;
-//@end
+@protocol AKAppleIDAuthenticationDelegate<NSObject>
+
+@optional
+- (char)authenticationController:(id)v1 shouldContinueWithAuthenticationResults:(id)v2 error:(id)v3 forContext:(id)v4;
+- (void)authenticationController:(id)v1 shouldContinueWithAuthenticationResults:(id)v2 error:(id)v3 forContext:(id)v4 completion:(void (^ /* unknown block signature */)(void))v5;
+@end
 //
 //
 ///*****************************************************************/
 //
-//@protocol NSTableViewDelegate<NSControlTextEditingDelegate>
+
 //
-//@optional
-//- (id)tableView:(id)v1 viewForTableColumn:(id)v2 row:(long long)v3;
-//- (id)tableView:(id)v1 rowViewForRow:(long long)v2;
-//- (void)tableView:(id)v1 didAddRowView:(id)v2 forRow:(long long)v3;
-//- (void)tableView:(id)v1 didRemoveRowView:(id)v2 forRow:(long long)v3;
-//- (void)tableView:(id)v1 willDisplayCell:(id)v2 forTableColumn:(id)v3 row:(long long)v4;
-//- (char)tableView:(id)v1 shouldEditTableColumn:(id)v2 row:(long long)v3;
-//- (id)tableView:(id)v1 toolTipForCell:(id)v2 rect:(struct CGRect *)v3 tableColumn:(id)v4 row:(long long)v5 mouseLocation:(struct CGPoint)v6;
-//- (char)tableView:(id)v1 shouldShowCellExpansionForTableColumn:(id)v2 row:(long long)v3;
-//- (char)tableView:(id)v1 shouldTrackCell:(id)v2 forTableColumn:(id)v3 row:(long long)v4;
-//- (id)tableView:(id)v1 dataCellForTableColumn:(id)v2 row:(long long)v3;
-//- (char)selectionShouldChangeInTableView:(id)v1;
-//- (char)tableView:(id)v1 shouldSelectRow:(long long)v2;
-//- (id)tableView:(id)v1 selectionIndexesForProposedSelection:(id)v2;
-//- (char)tableView:(id)v1 shouldSelectTableColumn:(id)v2;
-//- (void)tableView:(id)v1 mouseDownInHeaderOfTableColumn:(id)v2;
-//- (void)tableView:(id)v1 didClickTableColumn:(id)v2;
-//- (void)tableView:(id)v1 didDragTableColumn:(id)v2;
-//- (double)tableView:(id)v1 heightOfRow:(long long)v2;
-//- (id)tableView:(id)v1 typeSelectStringForTableColumn:(id)v2 row:(long long)v3;
-//- (long long)tableView:(id)v1 nextTypeSelectMatchFromRow:(long long)v2 toRow:(long long)v3 forString:(id)v4;
-//- (char)tableView:(id)v1 shouldTypeSelectForEvent:(id)v2 withCurrentSearchString:(id)v3;
-//- (char)tableView:(id)v1 isGroupRow:(long long)v2;
-//- (double)tableView:(id)v1 sizeToFitWidthOfColumn:(long long)v2;
-//- (char)tableView:(id)v1 shouldReorderColumn:(long long)v2 toColumn:(long long)v3;
-//- (id)tableView:(id)v1 rowActionsForRow:(long long)v2 edge:(long long)v3;
-//- (void)tableViewSelectionDidChange:(id)v1;
-//- (void)tableViewColumnDidMove:(id)v1;
-//- (void)tableViewColumnDidResize:(id)v1;
-//- (void)tableViewSelectionIsChanging:(id)v1;
-//@end
+//
+///*****************************************************************/
+//
+
 //
 //
 ///*****************************************************************/
@@ -364,16 +149,7 @@
 //
 ///*****************************************************************/
 //
-//@protocol NSOpenSavePanelDelegate<NSObject>
-//
-//@optional
-//- (char)panel:(id)v1 shouldEnableURL:(id)v2;
-//- (char)panel:(id)v1 validateURL:(id)v2 error:(id *)v3;
-//- (void)panel:(id)v1 didChangeToDirectoryURL:(id)v2;
-//- (id)panel:(id)v1 userEnteredFilename:(id)v2 confirmed:(char)v3;
-//- (void)panel:(id)v1 willExpand:(char)v2;
-//- (void)panelSelectionDidChange:(id)v1;
-//@end
+
 //
 //
 ///*****************************************************************/
@@ -489,122 +265,12 @@
 //
 ///*****************************************************************/
 //
-//@protocol NSPageControllerDelegate<NSObject>
-//
-//@optional
-//- (id)pageController:(id)v1 identifierForObject:(id)v2;
-//- (id)pageController:(id)v1 viewControllerForIdentifier:(id)v2;
-//- (struct CGRect)pageController:(id)v1 frameForObject:(id)v2;
-//- (void)pageController:(id)v1 prepareViewController:(id)v2 withObject:(id)v3;
-//- (void)pageController:(id)v1 didTransitionToObject:(id)v2;
-//- (void)pageControllerWillStartLiveTransition:(id)v1;
-//- (void)pageControllerDidEndLiveTransition:(id)v1;
-//@end
+
 //
 //
 ///*****************************************************************/
 //
-//@protocol NSOutlineViewDataSource<NSObject>
-//
-//@optional
-//- (long long)outlineView:(id)v1 numberOfChildrenOfItem:(id)v2;
-//- (id)outlineView:(id)v1 child:(long long)v2 ofItem:(id)v3;
-//- (char)outlineView:(id)v1 isItemExpandable:(id)v2;
-//- (id)outlineView:(id)v1 objectValueForTableColumn:(id)v2 byItem:(id)v3;
-//- (void)outlineView:(id)v1 setObjectValue:(id)v2 forTableColumn:(id)v3 byItem:(id)v4;
-//- (id)outlineView:(id)v1 itemForPersistentObject:(id)v2;
-//- (id)outlineView:(id)v1 persistentObjectForItem:(id)v2;
-//- (void)outlineView:(id)v1 sortDescriptorsDidChange:(id)v2;
-//- (id)outlineView:(id)v1 pasteboardWriterForItem:(id)v2;
-//- (void)outlineView:(id)v1 draggingSession:(id)v2 willBeginAtPoint:(struct CGPoint)v3 forItems:(id)v4;
-//- (void)outlineView:(id)v1 draggingSession:(id)v2 endedAtPoint:(struct CGPoint)v3 operation:(unsigned long long)v4;
-//- (char)outlineView:(id)v1 writeItems:(id)v2 toPasteboard:(id)v3;
-//- (void)outlineView:(id)v1 updateDraggingItemsForDrag:(id)v2;
-//- (unsigned long long)outlineView:(id)v1 validateDrop:(id)v2 proposedItem:(id)v3 proposedChildIndex:(long long)v4;
-//- (char)outlineView:(id)v1 acceptDrop:(id)v2 item:(id)v3 childIndex:(long long)v4;
-//- (id)outlineView:(id)v1 namesOfPromisedFilesDroppedAtDestination:(id)v2 forDraggedItems:(id)v3;
-//@end
-//
-//
-///*****************************************************************/
-//
-//@protocol NSTableViewDataSource<NSObject>
-//
-//@optional
-//- (long long)numberOfRowsInTableView:(id)v1;
-//- (long long)numberOfRowsInTableView:(id)v1;
-//- (id)tableView:(id)v1 objectValueForTableColumn:(id)v2 row:(long long)v3;
-//- (id)tableView:(id)v1 objectValueForTableColumn:(id)v2 row:(long long)v3;
-//- (void)tableView:(id)v1 setObjectValue:(id)v2 forTableColumn:(id)v3 row:(long long)v4;
-//- (void)tableView:(id)v1 setObjectValue:(id)v2 forTableColumn:(id)v3 row:(long long)v4;
-//- (void)tableView:(id)v1 sortDescriptorsDidChange:(id)v2;
-//- (id)tableView:(id)v1 pasteboardWriterForRow:(long long)v2;
-//- (void)tableView:(id)v1 draggingSession:(id)v2 willBeginAtPoint:(struct CGPoint)v3 forRowIndexes:(id)v4;
-//- (void)tableView:(id)v1 draggingSession:(id)v2 willBeginAtPoint:(struct CGPoint)v3 forRowIndexes:(id)v4;
-//- (void)tableView:(id)v1 draggingSession:(id)v2 endedAtPoint:(struct CGPoint)v3 operation:(unsigned long long)v4;
-//- (void)tableView:(id)v1 draggingSession:(id)v2 endedAtPoint:(struct CGPoint)v3 operation:(unsigned long long)v4;
-//- (void)tableView:(id)v1 updateDraggingItemsForDrag:(id)v2;
-//- (char)tableView:(id)v1 writeRowsWithIndexes:(id)v2 toPasteboard:(id)v3;
-//- (char)tableView:(id)v1 writeRowsWithIndexes:(id)v2 toPasteboard:(id)v3;
-//- (unsigned long long)tableView:(id)v1 validateDrop:(id)v2 proposedRow:(long long)v3 proposedDropOperation:(unsigned long long)v4;
-//- (char)tableView:(id)v1 acceptDrop:(id)v2 row:(long long)v3 dropOperation:(unsigned long long)v4;
-//- (id)tableView:(id)v1 namesOfPromisedFilesDroppedAtDestination:(id)v2 forDraggedRowsWithIndexes:(id)v3;
-//- (id)tableView:(id)v1 namesOfPromisedFilesDroppedAtDestination:(id)v2 forDraggedRowsWithIndexes:(id)v3;
-//@end
-//
-//
-///*****************************************************************/
-//
-//@protocol NSTableViewDelegate<NSControlTextEditingDelegate>
-//
-//@optional
-//- (id)tableView:(id)v1 viewForTableColumn:(id)v2 row:(long long)v3;
-//- (id)tableView:(id)v1 viewForTableColumn:(id)v2 row:(long long)v3;
-//- (id)tableView:(id)v1 rowViewForRow:(long long)v2;
-//- (void)tableView:(id)v1 didAddRowView:(id)v2 forRow:(long long)v3;
-//- (void)tableView:(id)v1 didAddRowView:(id)v2 forRow:(long long)v3;
-//- (void)tableView:(id)v1 didRemoveRowView:(id)v2 forRow:(long long)v3;
-//- (void)tableView:(id)v1 didRemoveRowView:(id)v2 forRow:(long long)v3;
-//- (void)tableView:(id)v1 willDisplayCell:(id)v2 forTableColumn:(id)v3 row:(long long)v4;
-//- (void)tableView:(id)v1 willDisplayCell:(id)v2 forTableColumn:(id)v3 row:(long long)v4;
-//- (char)tableView:(id)v1 shouldEditTableColumn:(id)v2 row:(long long)v3;
-//- (char)tableView:(id)v1 shouldEditTableColumn:(id)v2 row:(long long)v3;
-//- (id)tableView:(id)v1 toolTipForCell:(id)v2 rect:(struct CGRect *)v3 tableColumn:(id)v4 row:(long long)v5 mouseLocation:(struct CGPoint)v6;
-//- (id)tableView:(id)v1 toolTipForCell:(id)v2 rect:(struct CGRect *)v3 tableColumn:(id)v4 row:(long long)v5 mouseLocation:(struct CGPoint)v6;
-//- (char)tableView:(id)v1 shouldShowCellExpansionForTableColumn:(id)v2 row:(long long)v3;
-//- (char)tableView:(id)v1 shouldShowCellExpansionForTableColumn:(id)v2 row:(long long)v3;
-//- (char)tableView:(id)v1 shouldTrackCell:(id)v2 forTableColumn:(id)v3 row:(long long)v4;
-//- (char)tableView:(id)v1 shouldTrackCell:(id)v2 forTableColumn:(id)v3 row:(long long)v4;
-//- (id)tableView:(id)v1 dataCellForTableColumn:(id)v2 row:(long long)v3;
-//- (id)tableView:(id)v1 dataCellForTableColumn:(id)v2 row:(long long)v3;
-//- (char)selectionShouldChangeInTableView:(id)v1;
-//- (char)selectionShouldChangeInTableView:(id)v1;
-//- (char)tableView:(id)v1 shouldSelectRow:(long long)v2;
-//- (id)tableView:(id)v1 selectionIndexesForProposedSelection:(id)v2;
-//- (char)tableView:(id)v1 shouldSelectTableColumn:(id)v2;
-//- (char)tableView:(id)v1 shouldSelectTableColumn:(id)v2;
-//- (void)tableView:(id)v1 mouseDownInHeaderOfTableColumn:(id)v2;
-//- (void)tableView:(id)v1 mouseDownInHeaderOfTableColumn:(id)v2;
-//- (void)tableView:(id)v1 didClickTableColumn:(id)v2;
-//- (void)tableView:(id)v1 didClickTableColumn:(id)v2;
-//- (void)tableView:(id)v1 didDragTableColumn:(id)v2;
-//- (void)tableView:(id)v1 didDragTableColumn:(id)v2;
-//- (double)tableView:(id)v1 heightOfRow:(long long)v2;
-//- (id)tableView:(id)v1 typeSelectStringForTableColumn:(id)v2 row:(long long)v3;
-//- (id)tableView:(id)v1 typeSelectStringForTableColumn:(id)v2 row:(long long)v3;
-//- (long long)tableView:(id)v1 nextTypeSelectMatchFromRow:(long long)v2 toRow:(long long)v3 forString:(id)v4;
-//- (long long)tableView:(id)v1 nextTypeSelectMatchFromRow:(long long)v2 toRow:(long long)v3 forString:(id)v4;
-//- (char)tableView:(id)v1 shouldTypeSelectForEvent:(id)v2 withCurrentSearchString:(id)v3;
-//- (char)tableView:(id)v1 shouldTypeSelectForEvent:(id)v2 withCurrentSearchString:(id)v3;
-//- (char)tableView:(id)v1 isGroupRow:(long long)v2;
-//- (double)tableView:(id)v1 sizeToFitWidthOfColumn:(long long)v2;
-//- (char)tableView:(id)v1 shouldReorderColumn:(long long)v2 toColumn:(long long)v3;
-//- (id)tableView:(id)v1 rowActionsForRow:(long long)v2 edge:(long long)v3;
-//- (void)tableViewSelectionDidChange:(id)v1;
-//- (void)tableViewColumnDidMove:(id)v1;
-//- (void)tableViewColumnDidResize:(id)v1;
-//- (void)tableViewSelectionIsChanging:(id)v1;
-//@end
+
 //
 //
 ///*****************************************************************/
@@ -676,69 +342,7 @@
 //
 ///*****************************************************************/
 //
-//@protocol NSObject
-//@property (nonatomic,readonly) long long hash;
-//@property (nonatomic,readonly) Class superclass;
-//@property (nonatomic,readonly) NSString * description;
-//@property (nonatomic,readonly) NSString * debugDescription;
-//- (char)isEqual:(id)v1;
-//- (long long)hash;
-//- (Class)superclass;
-//- (Class)class;
-//- (id)self;
-//- (id)performSelector:(SEL)v1;
-//- (id)performSelector:(SEL)v1;
-//- (id)performSelector:(SEL)v1 withObject:(id)v2;
-//- (id)performSelector:(SEL)v1 withObject:(id)v2;
-//- (id)performSelector:(SEL)v1 withObject:(id)v2 withObject:(id)v3;
-//- (id)performSelector:(SEL)v1 withObject:(id)v2 withObject:(id)v3;
-//- (char)isProxy;
-//- (char)isKindOfClass:(Class)v1;
-//- (char)isKindOfClass:(Class)v1;
-//- (char)isMemberOfClass:(Class)v1;
-//- (char)isMemberOfClass:(Class)v1;
-//- (char)conformsToProtocol:(id)v1;
-//- (char)conformsToProtocol:(id)v1;
-//- (char)respondsToSelector:(SEL)v1;
-//- (char)respondsToSelector:(SEL)v1;
-//- (id)retain;
-//- (oneway  void)release;
-//- (id)autorelease;
-//- (unsigned long long)retainCount;
-//- (struct _NSZone *)zone;
-//- (id)description;
-//
-//@optional
-//- (id)debugDescription;
-//@end
-//
-//
-///*****************************************************************/
-//
-//@protocol NSControlTextEditingDelegate<NSObject>
-//
-//@optional
-//- (void)controlTextDidBeginEditing:(id)v1;
-//- (void)controlTextDidEndEditing:(id)v1;
-//- (void)controlTextDidChange:(id)v1;
-//- (char)control:(id)v1 textShouldBeginEditing:(id)v2;
-//- (char)control:(id)v1 textShouldEndEditing:(id)v2;
-//- (char)control:(id)v1 didFailToFormatString:(id)v2 errorDescription:(id)v3;
-//- (void)control:(id)v1 didFailToValidatePartialString:(id)v2 errorDescription:(id)v3;
-//- (char)control:(id)v1 isValidObject:(id)v2;
-//- (char)control:(id)v1 textView:(id)v2 doCommandBySelector:(SEL)v3;
-//- (char)control:(id)v1 textView:(id)v2 doCommandBySelector:(SEL)v3;
-//- (id)control:(id)v1 textView:(id)v2 completions:(id)v3 forPartialWordRange:(struct _NSRange)v4 indexOfSelectedItem:(long long *)v5;
-//@end
-//
-//
-///*****************************************************************/
-//
-//@interface NSSplitView (DeviceWindowAnimation)
-//+ (id)defaultAnimationForKey:(id)v1;
-//- (void)setDvtDevicesWindow_splitPosition:(double)v1;
-//- (double)dvtDevicesWindow_splitPosition;
-//@end
+
 //
 //
 ///*****************************************************************/
@@ -834,50 +438,49 @@
 //
 ///*****************************************************************/
 //
-//@interface DVTDeviceLocator (KitAdditions)
-//@property (readonly) char canCreateDevices;
-//- (char)canCreateDevices;
-//- (void)beginDeviceCreationAssistantWithWindow:(id)v1 completionHandler:(void (^ /* unknown block signature */)(void))v2;
-//- (void)beginPairingAssistantForDevice:(id)v1 withWindow:(id)v2 completionHandler:(void (^ /* unknown block signature */)(void))v3;
-//@end
+@interface DVTDeviceLocator (KitAdditions)
+@property (readonly) char canCreateDevices;
+- (char)canCreateDevices;
+- (void)beginDeviceCreationAssistantWithWindow:(id)v1 completionHandler:(void (^ /* unknown block signature */)(void))v2;
+- (void)beginPairingAssistantForDevice:(id)v1 withWindow:(id)v2 completionHandler:(void (^ /* unknown block signature */)(void))v3;
+@end
 //
 //
 ///*****************************************************************/
 //
-//@interface DVTDevicesWindowController : NSWindowController<DVTDevicesListViewControllerDelegate,NSMenuDelegate,NSWindowDelegate> {
-//    DVTDeviceProvisioningProfilesSheetController * _provisioningProfilesSheet;
-//    void (^ /* unknown block signature */)(void) _devicesWindowCompletionHandler;
-//    NSWindow * _tutorialWindow;
-//    DVTOnboardingTutorialController * _tutorialController;
-//    DVTDevicesListViewController * _devicesListViewController;
-//    NSMutableSet * _loadedModes;
-//}
+@interface DVTDevicesWindowController : NSWindowController<DVTDevicesListViewControllerDelegate,NSMenuDelegate,NSWindowDelegate> {
+    //DVTDeviceProvisioningProfilesSheetController * _provisioningProfilesSheet;
+    //void (^ /* unknown block signature */)(void) _devicesWindowCompletionHandler;
+    //NSWindow * _tutorialWindow;
+    //DVTOnboardingTutorialController * _tutorialController;
+    //DVTDevicesListViewController * _devicesListViewController;
+    NSMutableSet * _loadedModes;
+}
 //@property (copy) void (^ /* unknown block signature */)(void) devicesWindowCompletionHandler;
 //@property (retain) NSWindow * tutorialWindow;
 //@property (retain) DVTOnboardingTutorialController * tutorialController;
 //@property DVTDevicesListViewController * devicesListViewController;
-//@property (retain) NSMutableSet * loadedModes;
+@property (retain) NSMutableSet * loadedModes;
 //@property (readonly) unsigned long long hash;
-//@property (readonly) Class superclass;
-//@property (readonly,copy) NSString * description;
-//@property (readonly,copy) NSString * debugDescription;
-//+ (void)initialize;
-//+ (id)logAspect;
-//+ (id)sharedDevicesWindowController;
-//+ (char)shouldShowDeviceConsole;
-//+ (id)_provisioningProfileTypeIdentifers;
-//+ (id)supportedFileDataTypeIdentifiers;
-//- (void)showWindowWithCompletionHandler:(void (^ /* unknown block signature */)(void))v1;
-//- (void)showWindow:(id)v1;
-//- (void)windowWillClose:(id)v1;
-//- (char)openFileURL:(id)v1 withFileType:(id)v2 error:(id *)v3;
-//- (void)beginOnboardingTutorialSheet;
-//- (void)didFinishLoadingDevices:(id)v1;
-//- (void)showProvisioningProfiles:(id)v1;
-//- (void)selectTabForMode:(long long)v1 completionHandler:(void (^ /* unknown block signature */)(void))v2;
-//- (void)selectDevice:(id)v1;
-//- (void).cxx_destruct;
-//@end
+@property (readonly) Class superclass;
+@property (readonly,copy) NSString * description;
+@property (readonly,copy) NSString * debugDescription;
++ (void)initialize;
++ (id)logAspect;
++ (DVTDevicesWindowController*)sharedDevicesWindowController;
++ (char)shouldShowDeviceConsole;
++ (id)_provisioningProfileTypeIdentifers;
++ (id)supportedFileDataTypeIdentifiers;
+- (void)showWindowWithCompletionHandler:(void (^ /* unknown block signature */)(void))v1;
+- (void)showWindow:(id)v1;
+- (void)windowWillClose:(id)v1;
+- (char)openFileURL:(id)v1 withFileType:(id)v2 error:(id *)v3;
+- (void)beginOnboardingTutorialSheet;
+- (void)didFinishLoadingDevices:(id)v1;
+- (void)showProvisioningProfiles:(id)v1;
+- (void)selectTabForMode:(long long)v1 completionHandler:(void (^ /* unknown block signature */)(void))v2;
+- (void)selectDevice:(id)v1;
+@end
 //
 //
 ///*****************************************************************/
@@ -1258,27 +861,27 @@
 //
 ///*****************************************************************/
 //
-//@interface DVTOnboardingTutorialSetupDevice : DVTOnboardingPage
-//- (void)viewDidAppear;
-//- (char)readyForNextPage;
-//- (char)willNavigateToNextPage;
-//@end
 //
 //
 ///*****************************************************************/
 //
-//@interface DVTOnboardingPage : NSViewController {
-//    NSSegmentedControl * deviceSourceSegmentedControl;
-//    NSLayoutConstraint * topConstraint;
-//    DVTOnboardingTutorialController * _tutorialController;
-//}
-//@property (retain) DVTOnboardingTutorialController * tutorialController;
-//- (void)viewWillAppear;
-//- (char)readyForNextPage;
-//- (char)willNavigateToNextPage;
-//- (void)selectConnectedVsRemote:(id)v1;
-//- (void).cxx_destruct;
-//@end
+@interface DVTOnboardingPage : NSViewController {
+    NSSegmentedControl * deviceSourceSegmentedControl;
+    NSLayoutConstraint * topConstraint;
+    DVTOnboardingTutorialController * _tutorialController;
+}
+@property (retain) DVTOnboardingTutorialController * tutorialController;
+- (void)viewWillAppear;
+- (char)readyForNextPage;
+- (char)willNavigateToNextPage;
+- (void)selectConnectedVsRemote:(id)v1;
+@end
+
+@interface DVTOnboardingTutorialSetupDevice : DVTOnboardingPage
+- (void)viewDidAppear;
+- (char)readyForNextPage;
+- (char)willNavigateToNextPage;
+@end
 //
 //
 ///*****************************************************************/
@@ -1376,10 +979,10 @@
 //
 ///*****************************************************************/
 //
-//@interface DVTOnboardingTutorialSuccess : DVTOnboardingPage
-//- (void)setupAnotherAction:(id)v1;
-//- (void)viewDidAppear;
-//@end
+@interface DVTOnboardingTutorialSuccess : DVTOnboardingPage
+- (void)setupAnotherAction:(id)v1;
+- (void)viewDidAppear;
+@end
 //
 //
 ///*****************************************************************/
@@ -1455,59 +1058,101 @@
 //
 ///*****************************************************************/
 //
-//@interface DVTOnboardingTutorialChooseDevice : DVTOnboardingPage<AKAppleIDAuthenticationDelegate,NSTableViewDataSource> {
-//    NSPredicate * _predicate;
-//    NSTableView * _tableView;
-//    AKAppleIDAuthenticationController * _appleIDController;
-//}
-//@property NSTableView * tableView;
+@interface DVTOnboardingTutorialChooseDevice : DVTOnboardingPage<AKAppleIDAuthenticationDelegate,NSTableViewDataSource> {
+    NSPredicate * _predicate;
+    NSTableView * _tableView;
+    //AKAppleIDAuthenticationController * _appleIDController;
+}
+@property NSTableView * tableView;
 //@property (retain) AKAppleIDAuthenticationController * appleIDController;
 //@property (readonly) unsigned long long hash;
-//@property (readonly) Class superclass;
-//@property (readonly,copy) NSString * description;
-//@property (readonly,copy) NSString * debugDescription;
-//- (void)viewDidAppear;
-//- (void)setTutorialController:(id)v1;
-//- (char)readyForNextPage;
-//- (char)willNavigateToNextPage;
-//- (void)viewWillDisappear;
-//- (id)_orderedDevices;
-//- (id)whyIsDeviceNotAvailable:(id)v1;
-//- (id)accountCredentialsForResults:(id)v1;
-//- (void)_addAccountWithResults:(id)v1;
-//- (long long)numberOfRowsInTableView:(id)v1;
-//- (id)tableView:(id)v1 viewForTableColumn:(id)v2 row:(long long)v3;
-//- (void)tableViewSelectionDidChange:(id)v1;
-//- (char)authenticationController:(id)v1 shouldContinueWithAuthenticationResults:(id)v2 error:(id)v3 forContext:(id)v4;
-//- (void).cxx_destruct;
-//@end
+@property (readonly) Class superclass;
+@property (readonly,copy) NSString * description;
+@property (readonly,copy) NSString * debugDescription;
+- (void)viewDidAppear;
+- (void)setTutorialController:(id)v1;
+- (char)readyForNextPage;
+- (char)willNavigateToNextPage;
+- (void)viewWillDisappear;
+- (id)_orderedDevices;
+- (id)whyIsDeviceNotAvailable:(id)v1;
+- (id)accountCredentialsForResults:(id)v1;
+- (void)_addAccountWithResults:(id)v1;
+- (long long)numberOfRowsInTableView:(id)v1;
+- (id)tableView:(id)v1 viewForTableColumn:(id)v2 row:(long long)v3;
+- (void)tableViewSelectionDidChange:(id)v1;
+- (char)authenticationController:(id)v1 shouldContinueWithAuthenticationResults:(id)v2 error:(id)v3 forContext:(id)v4;
+@end
 //
 //
 ///*****************************************************************/
+
+@interface DVTTutorialController : NSObject<DVTInvalidation,NSPageControllerDelegate> {
+	//void (^ /* unknown block signature */)(void) _cancelHandler;
+	DVTPageController * _pageController;
+	NSButton * _currentPageNavigationButton;
+	NSStoryboard * _storyboard;
+	//DVTTutorialNavigationController * _navigationController;
+}
+@property (retain) NSStoryboard * storyboard;
+//@property (retain) DVTTutorialNavigationController * navigationController;
+//@property (copy,nonatomic) void (^ /* unknown block signature */)(void) cancelHandler;
+@property (readonly) NSView * tutorialView;
+@property (retain) DVTPageController * pageController;
+@property (retain,nonatomic) NSButton * currentPageNavigationButton;
+//@property (readonly,nonatomic,getter=isValid) char valid;
+//@property (readonly) DVTStackBacktrace * invalidationBacktrace;
+//@property (retain) DVTStackBacktrace * creationBacktrace;
+//@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (readonly,copy) NSString * description;
+@property (readonly,copy) NSString * debugDescription;
++ (void)initialize;
++ (id)linkColor;
+- (void)nextPage;
+- (void)previousPage;
+- (void)showViewControllerWithIdentifier:(id)v1;
+- (void)cancel;
+- (id)identifiersForPagesInStoryboard;
+- (id)identifierForPageController;
+- (void)reloadIdentifiers:(char)v1;
+- (void)validateCurrentPage;
+- (char)currentPageShouldEnableNextButton;
+- (id)init;
+- (id)pageController:(id)v1 identifierForObject:(id)v2;
+- (id)pageController:(id)v1 viewControllerForIdentifier:(id)v2;
+- (void)_ensureNavigationIsOnTop;
+- (void)pageControllerDidEndLiveTransition:(id)v1;
+- (void)_updateNavigationButtons;
+- (void)pageController:(id)v1 didTransitionToObject:(id)v2;
+- (void)pageController:(id)v1 prepareViewController:(id)v2 withObject:(id)v3;
+- (void)setNextButton:(id)v1 additionalAction:(void (^ /* unknown block signature */)(void))v2;
+- (void)primitiveInvalidate;
+@end
+
 //
-//@interface DVTOnboardingTutorialController : DVTTutorialController {
-//    NSArray * _developerTeams;
-//    unsigned long long _startKey;
-//    DVTDevice * _selectedDeviceForSetup;
-//    DVTDeveloperAccount * _accountForSetup;
-//}
-//@property (retain,nonatomic) DVTDevice * selectedDeviceForSetup;
+@interface DVTOnboardingTutorialController : DVTTutorialController {
+    NSArray * _developerTeams;
+    unsigned long long _startKey;
+    DVTDevice * _selectedDeviceForSetup;
+    //DVTDeveloperAccount * _accountForSetup;
+}
+@property (retain,nonatomic) DVTDevice * selectedDeviceForSetup;
 //@property (retain,nonatomic) DVTDeveloperAccount * accountForSetup;
-//@property (readonly,nonatomic) char focusOnConnected;
-//- (id)init;
-//- (id)devices;
-//- (id)_identifiersForConnectedPages;
-//- (id)_identifiersForRemotePages;
-//- (id)identifiersForPagesInStoryboard;
-//- (char)currentPageShouldEnableNextButton;
-//- (void)nextPage;
-//- (void)restartTutorial:(unsigned long long)v1;
-//- (id)identifierForPageController;
-//- (id)pageController:(id)v1 viewControllerForIdentifier:(id)v2;
-//- (id)_devicesForPlatforms:(id)v1;
-//- (id)developerTeamsForAccount;
-//- (void).cxx_destruct;
-//@end
+@property (readonly,nonatomic) char focusOnConnected;
+- (id)init;
+- (id)devices;
+- (id)_identifiersForConnectedPages;
+- (id)_identifiersForRemotePages;
+- (id)identifiersForPagesInStoryboard;
+- (char)currentPageShouldEnableNextButton;
+- (void)nextPage;
+- (void)restartTutorial:(unsigned long long)v1;
+- (id)identifierForPageController;
+- (DVTOnboardingPage*)pageController:(DVTPageController*)v1 viewControllerForIdentifier:(NSString*)v2;
+- (id)_devicesForPlatforms:(id)v1;
+- (id)developerTeamsForAccount;
+@end
 //
 //
 ///*****************************************************************/
@@ -1743,59 +1388,17 @@
 //
 ///*****************************************************************/
 //
-//@interface DVTPageController : NSPageController {
-//    char _disableSwipeWithScrollWheel;
-//}
-//@property char disableSwipeWithScrollWheel;
-//- (void)scrollWheel:(id)v1;
-//@end
+@interface DVTPageController : NSPageController {
+    char _disableSwipeWithScrollWheel;
+}
+@property char disableSwipeWithScrollWheel;
+- (void)scrollWheel:(id)v1;
+@end
 //
 //
 ///*****************************************************************/
 //
-//@interface DVTTutorialController : NSObject<DVTInvalidation,NSPageControllerDelegate> {
-//    void (^ /* unknown block signature */)(void) _cancelHandler;
-//    DVTPageController * _pageController;
-//    NSButton * _currentPageNavigationButton;
-//    NSStoryboard * _storyboard;
-//    DVTTutorialNavigationController * _navigationController;
-//}
-//@property (retain) NSStoryboard * storyboard;
-//@property (retain) DVTTutorialNavigationController * navigationController;
-//@property (copy,nonatomic) void (^ /* unknown block signature */)(void) cancelHandler;
-//@property (readonly) NSView * tutorialView;
-//@property (retain) DVTPageController * pageController;
-//@property (retain,nonatomic) NSButton * currentPageNavigationButton;
-//@property (readonly,nonatomic,getter=isValid) char valid;
-//@property (readonly) DVTStackBacktrace * invalidationBacktrace;
-//@property (retain) DVTStackBacktrace * creationBacktrace;
-//@property (readonly) unsigned long long hash;
-//@property (readonly) Class superclass;
-//@property (readonly,copy) NSString * description;
-//@property (readonly,copy) NSString * debugDescription;
-//+ (void)initialize;
-//+ (id)linkColor;
-//- (void)nextPage;
-//- (void)previousPage;
-//- (void)showViewControllerWithIdentifier:(id)v1;
-//- (void)cancel;
-//- (id)identifiersForPagesInStoryboard;
-//- (id)identifierForPageController;
-//- (void)reloadIdentifiers:(char)v1;
-//- (void)validateCurrentPage;
-//- (char)currentPageShouldEnableNextButton;
-//- (id)init;
-//- (id)pageController:(id)v1 identifierForObject:(id)v2;
-//- (id)pageController:(id)v1 viewControllerForIdentifier:(id)v2;
-//- (void)_ensureNavigationIsOnTop;
-//- (void)pageControllerDidEndLiveTransition:(id)v1;
-//- (void)_updateNavigationButtons;
-//- (void)pageController:(id)v1 didTransitionToObject:(id)v2;
-//- (void)pageController:(id)v1 prepareViewController:(id)v2 withObject:(id)v3;
-//- (void)setNextButton:(id)v1 additionalAction:(void (^ /* unknown block signature */)(void))v2;
-//- (void)primitiveInvalidate;
-//- (void).cxx_destruct;
-//@end
+
 //
 //
 ///*****************************************************************/
