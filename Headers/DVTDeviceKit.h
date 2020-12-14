@@ -1,4 +1,6 @@
 #import <Cocoa/Cocoa.h>
+#import "DVTFoundation.h"
+#import "IDEFoundation.h"
 
 @class DVTOnboardingTutorialController;
 @class DVTPageController;

@@ -8017,7 +8017,7 @@
 @property (readonly) NSArray * deviceOperations;
 @property (readonly,copy) NSURL * deviceLocation;
 @property (readonly,getter=isGenericDevice) char genericDevice;
-@property (readonly,getter=isConcreteDevice) char concreteDevice;
+@property (readonly,getter=isConcreteDevice) bool concreteDevice;
 @property (readonly) char isSupportedHardware;
 @property (readonly) char isRunningSupportedOS;
 @property char isCloudDevice;
@@ -8057,8 +8057,8 @@
 @property (readonly) char canBeWatchCompanion;
 @property (readonly) NSObject<DVTBasicDevice> * activeProxiedDevice;
 @property (readonly) char canSetActiveProxiedDevice;
-@property (readonly) char canRename;
-@property (readonly) char canIgnore;
+@property (readonly) bool canRename;
+@property (readonly) bool canIgnore;
 @property (readonly) bool isWireless;
 @property (readonly) bool hasWirelessConnection;
 @property (readonly) bool hasWiredConnection;
@@ -8078,7 +8078,7 @@
 @property (readonly) bool canTakeScreenshot;
 @property (readonly) char canStartUpAndShutDown;
 //@property (readonly) unsigned long long state;
-@property (readonly) char allowsManagedStateControl;
+@property (readonly) bool allowsManagedStateControl;
 @property (readonly) char canRunExecutables;
 @property (readonly) char canInstallApplication;
 @property (readonly) unsigned long long supportedLaunchOptions;

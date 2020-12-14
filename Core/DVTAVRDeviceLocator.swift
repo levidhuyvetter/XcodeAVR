@@ -7,9 +7,7 @@ class DVTAVRDeviceLocator: DVTDeviceLocator {
 	
 	override init!() {
 		super.init()
-		
-		DVTOnboardingTutorialController.avrSwizzle()
-		
+				
 		let sys_config = strdup("/Library/Developer/Toolchains/AVR.xctoolchain/usr/etc/avrdude.conf")
 		let _ = init_config()
 		let _ = read_config(sys_config)

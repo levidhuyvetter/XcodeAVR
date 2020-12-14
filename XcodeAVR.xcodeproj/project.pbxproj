@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB214EBB25881F94005091D4 /* DVTOnboardingTutorialController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB214EBA25881F94005091D4 /* DVTOnboardingTutorialController.m */; };
+		DB214ECC25882B83005091D4 /* DVTOnboardingTutorialSuccess.m in Sources */ = {isa = PBXBuildFile; fileRef = DB214ECB25882B83005091D4 /* DVTOnboardingTutorialSuccess.m */; };
 		DB3153E9257DBB860025784E /* DVTOnboardingTutorialPairDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3153E7257DBB860025784E /* DVTOnboardingTutorialPairDevice.swift */; };
 		DB3153EA257DBB860025784E /* DVTOnboardingTutorialPairDevice.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB3153E8257DBB860025784E /* DVTOnboardingTutorialPairDevice.xib */; };
 		DB31540A258011910025784E /* DVTDeviceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB315409258011910025784E /* DVTDeviceKit.framework */; };
-		DB31542025822E940025784E /* DVTOnboardingTutorialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB31541F25822E940025784E /* DVTOnboardingTutorialController.swift */; };
 		DB6F16AF258384C000CEBF13 /* AVRDProgrammer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6F16AE258384C000CEBF13 /* AVRDProgrammer.swift */; };
 		DB9360BF257C17F500537C46 /* libavrdude.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DB9360BE257C17F500537C46 /* libavrdude.dylib */; };
 		DB9360CB257C189900537C46 /* avrdude.c in Sources */ = {isa = PBXBuildFile; fileRef = DB9360CA257C189900537C46 /* avrdude.c */; };
@@ -178,10 +179,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DB214EBA25881F94005091D4 /* DVTOnboardingTutorialController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DVTOnboardingTutorialController.m; sourceTree = "<group>"; };
+		DB214ECB25882B83005091D4 /* DVTOnboardingTutorialSuccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVTOnboardingTutorialSuccess.m; sourceTree = "<group>"; };
 		DB3153E7257DBB860025784E /* DVTOnboardingTutorialPairDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVTOnboardingTutorialPairDevice.swift; sourceTree = "<group>"; };
 		DB3153E8257DBB860025784E /* DVTOnboardingTutorialPairDevice.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DVTOnboardingTutorialPairDevice.xib; sourceTree = "<group>"; };
 		DB315409258011910025784E /* DVTDeviceKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTDeviceKit.framework; path = ../../../../../Applications/Xcode.app/Contents/SharedFrameworks/DVTDeviceKit.framework; sourceTree = "<group>"; };
-		DB31541F25822E940025784E /* DVTOnboardingTutorialController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVTOnboardingTutorialController.swift; sourceTree = "<group>"; };
 		DB6F16AE258384C000CEBF13 /* AVRDProgrammer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVRDProgrammer.swift; sourceTree = "<group>"; };
 		DB7FC80D2575573000527939 /* time.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = time.h; sourceTree = "<group>"; };
 		DB7FC80E2575573000527939 /* inttypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = inttypes.h; sourceTree = "<group>"; };
@@ -4401,6 +4403,15 @@
 			path = "long-double32";
 			sourceTree = "<group>";
 		};
+		DBB3A28F2587DF7200B16969 /* Hooks */ = {
+			isa = PBXGroup;
+			children = (
+				DB214EBA25881F94005091D4 /* DVTOnboardingTutorialController.m */,
+				DB214ECB25882B83005091D4 /* DVTOnboardingTutorialSuccess.m */,
+			);
+			path = Hooks;
+			sourceTree = "<group>";
+		};
 		DBD1EC002574429D00663033 = {
 			isa = PBXGroup;
 			children = (
@@ -4437,9 +4448,9 @@
 				DB9360CA257C189900537C46 /* avrdude.c */,
 				DB3153E7257DBB860025784E /* DVTOnboardingTutorialPairDevice.swift */,
 				DB3153E8257DBB860025784E /* DVTOnboardingTutorialPairDevice.xib */,
-				DB31541F25822E940025784E /* DVTOnboardingTutorialController.swift */,
 				DB6F16AE258384C000CEBF13 /* AVRDProgrammer.swift */,
 				DBD1EC1A2574456800663033 /* Info.plist */,
+				DBB3A28F2587DF7200B16969 /* Hooks */,
 				DBD1EC23257447D500663033 /* Resources */,
 				DBD1EC372574484700663033 /* Core-Bridging-Header.h */,
 			);
@@ -4709,10 +4720,11 @@
 			files = (
 				DB6F16AF258384C000CEBF13 /* AVRDProgrammer.swift in Sources */,
 				DB9360CB257C189900537C46 /* avrdude.c in Sources */,
+				DB214ECC25882B83005091D4 /* DVTOnboardingTutorialSuccess.m in Sources */,
+				DB214EBB25881F94005091D4 /* DVTOnboardingTutorialController.m in Sources */,
 				DB3153E9257DBB860025784E /* DVTOnboardingTutorialPairDevice.swift in Sources */,
 				DBD1EC402574484800663033 /* IDERunAVROperationWorker.swift in Sources */,
 				DBD1EC3E2574484800663033 /* DVTAVRDevice.swift in Sources */,
-				DB31542025822E940025784E /* DVTOnboardingTutorialController.swift in Sources */,
 				DBD1EC3F2574484800663033 /* DVTAVRDeviceLocator.swift in Sources */,
 				DBD1EC3D2574484800663033 /* IDERunAVRService.swift in Sources */,
 			);

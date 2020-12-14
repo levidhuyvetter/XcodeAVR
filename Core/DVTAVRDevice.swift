@@ -32,14 +32,14 @@ class DVTAVRDevice: DVTDevice {
 
 	override var deviceWindowCategory: Int32 { self.paired ? super.deviceWindowCategory : 5 } //0=connected,1=nowhere,2=paironly,3=ignored,4=disconnected,5=discovered,6=unknown
 		
-	override var deviceIsBusy: Bool { false }
-	override var isPaired: Bool { self.paired }
-	override var hasWiredConnection: Bool { self.pgm?.connected ?? false }
+	override var deviceIsBusy: CBool { false }
+	override var isPaired: CBool { self.paired }
+	override var hasWiredConnection: CBool { self.pgm?.connected ?? false }
 	
 	
-	override var allowsManagedStateControl: Int8 { 0 }
-	override var canIgnore: Int8 { 1 } //Show as run destination checkbox enabled/disabled
-	override var concreteDevice: Int8 { 1 }
+	override var allowsManagedStateControl: CBool { false }
+	override var canIgnore: CBool { true } //Show as run destination checkbox enabled/disabled
+	override var concreteDevice: CBool { true }
 	override var image: NSImage! {
 		let big = Bundle(for: type(of: self)).image(forResource: "Chip")
 		let small = Bundle(for: type(of: self)).image(forResource: "MiniChip")
@@ -47,7 +47,7 @@ class DVTAVRDevice: DVTDevice {
 		return big
 	}
 	override var dvt_sourceListImage: NSImage! { Bundle(for: type(of: self)).image(forResource: "SidebarChip") }
-	override var canRename: Int8 { 1 }
+	override var canRename: CBool { true }
 	override var deviceLocation: URL! { URL(fileURLWithPath: "/dev/\(self.identifier!)") }
 //	override var canRunExecutables: Int8 { 1 }
 	override var dvt_labeledSerialNumber: String! { return "Signature: \(self.signature?.string ?? "-")" }
