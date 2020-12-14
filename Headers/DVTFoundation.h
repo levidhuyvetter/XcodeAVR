@@ -8098,10 +8098,10 @@
 //@property (readonly,copy) NSString * debugDescription;
 + (void)initialize;
 + (id)_knownDeviceLocators;
-+ (id)keyPathsForValuesAffectingActiveProxiedDevice;
++ (NSSet*)keyPathsForValuesAffectingActiveProxiedDevice;
 + (id)modelUTIFromModelCode:(id)v1;
 + (id)modelNameFromModelUTI:(id)v1;
-+ (id)keyPathsForValuesAffectingHasConnection;
++ (NSSet*)keyPathsForValuesAffectingHasConnection;
 + (unsigned long long)watchLaunchStyleForWatch:(id)v1;
 + (unsigned long long)watchLaunchStyleForDevice:(id)v1;
 - (id)initWithDeviceLocation:(id)v1 extension:(id)v2;

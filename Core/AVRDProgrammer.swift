@@ -8,9 +8,9 @@ class AVRDProgrammer {
 	
 	var id:String { String(cString: UnsafeMutablePointer<UInt8>(OpaquePointer(ldata(lfirst(self.pgm.id))))) }
 	var desc:String { withUnsafePointer(to: self.pgm.desc) { $0.withMemoryRebound(to: UInt8.self, capacity: MemoryLayout.size(ofValue: $0)) { String(cString: $0) } } }
+	var part:String { withUnsafePointer(to: self.prt?.desc) { $0.withMemoryRebound(to: UInt8.self, capacity: MemoryLayout.size(ofValue: $0)) { String(cString: $0) } } }
 	var connected:Bool { return self.open && (self.prt != nil) }
 	var baud:Int { get { Int(self.pgm.baudrate) } set { self.pgm.baudrate = Int32(newValue) } }
-	var signature:(UInt8, UInt8, UInt8) = (0, 0, 0)
 	
 	init(_ pgm:PROGRAMMER, port:String) {
 		self.port = port
@@ -83,21 +83,27 @@ class AVRDProgrammer {
 		return rv
 	}
 	
-	func getSignature() throws -> (UInt8, UInt8, UInt8) {
+	func getSignature() throws -> Signature {
 		return try self.enable {
 			var prt = $0
 			guard avr_signature(&self.pgm, &prt) == 0 else { throw "Could not get signature." }
 			guard let sig = avr_locate_mem(&prt, strdup("signature")) else { throw "Could not locate signature memory." }
-			guard sig.pointee.size >= 3 else { throw "Signature is too short." }
-			self.signature = (sig.pointee.buf[0], sig.pointee.buf[1], sig.pointee.buf[2])
-			return self.signature
+			guard let signature = Signature(sig.pointee) else { throw "Could not create signature object." }
+			return signature
 		}
 	}
 	
-	func verifiySignature() throws -> Bool {
-		let real = try self.getSignature()
+	func verifiySignature(_ sig:Signature) -> Bool {
 		let expected = self.prt!.signature
-		return real == expected
+		return sig.tuple == expected
+	}
+	
+	func getMemorySize() throws -> Int {
+		return try self.enable {
+			var prt = $0
+			guard let fls = avr_locate_mem(&prt, strdup("flash")) else { throw "Could not locate flash memory." }
+			return Int(fls.pointee.size)
+		}
 	}
 		
 	func disconnect() {
@@ -127,3 +133,27 @@ class AVRDProgrammer {
 }
 
 extension String:Error {}
+
+class Signature:NSObject {
+	let a:UInt8
+	let b:UInt8
+	let c:UInt8
+	
+	var tuple:(UInt8,UInt8,UInt8) { (self.a,self.b,self.c) }
+	var string:String { String(format: "%02X %02X %02X", self.a, self.b, self.c) }
+	
+	init(_ a:UInt8, _ b:UInt8, _ c:UInt8) {
+		self.a = a
+		self.b = b
+		self.c = c
+		super.init()
+	}
+	
+	init?(_ sig:AVRMEM) {
+		guard sig.size >= 3 else { return nil }
+		self.a = sig.buf[0]
+		self.b = sig.buf[1]
+		self.c = sig.buf[2]
+		super.init()
+	}
+}

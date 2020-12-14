@@ -79,15 +79,17 @@ class DVTAVRDeviceLocator: DVTDeviceLocator {
 		device.paired = true
 		
 		DispatchQueue.global(qos: .background).async {
-			try? device.pgm?.connect()
-			try? device.pgm?.verifiySignature()
+			let con = (try? device.connect()) ?? false
+			DispatchQueue.main.async {
+				device.connected = con
+			}
 		}
 		
 		return device
 	}
 	
 	func delete(device:String) {
-		guard FileManager.default.fileExists(atPath: pairedDevicesURL.appendingPathComponent("/\(device).plist").absoluteString) else { return }
-		try? FileManager.default.removeItem(atPath: pairedDevicesURL.appendingPathComponent("/\(device).plist").absoluteString)
+		guard FileManager.default.fileExists(atPath: pairedDevicesURL.appendingPathComponent("/\(device).plist").path) else { return }
+		try? FileManager.default.removeItem(atPath: pairedDevicesURL.appendingPathComponent("/\(device).plist").path)
 	}
 }

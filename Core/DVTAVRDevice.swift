@@ -9,22 +9,25 @@ import Cocoa
 
 class DVTAVRDevice: DVTDevice {
 	var pgm:AVRDProgrammer? = nil
-	var paired = false
-	var signature:(UInt8,UInt8,UInt8) { self.pgm?.signature ?? (0,0,0) }
+	@objc dynamic var paired = false
+	@objc dynamic var connected = false
 	var locator:DVTAVRDeviceLocator? = nil
+	
+	@objc dynamic var signature:Signature? = nil
+	@objc dynamic var size:Int = 0
 	
 	init(id:String) {
 		super.init()
 		self.identifier = id
 		self.platform = DVTPlatform.platform(forIdentifier: "com.atmel.platform.avr") as? DVTPlatform
 		self.name = id.replacingOccurrences(of: "cu.", with: "", options: [], range: nil)
-		self.modelName = "None"
+		self.modelName = "-"
 		self.nativeArchitecture = "avr"
 		self.supportedArchitectures = ["avr"]
 		self.modelUTI = "com.apple.mac"
 		self.deviceType = DVTDeviceType.deviceType(withIdentifier: "Xcode.DeviceType.AVR") as? DVTDeviceType
 		self.operatingSystemVersionWithBuildNumber = "None"
-		self.available = 0
+		self.available = 1
 	}
 
 	override var deviceWindowCategory: Int32 { self.paired ? super.deviceWindowCategory : 5 } //0=connected,1=nowhere,2=paironly,3=ignored,4=disconnected,5=discovered,6=unknown
@@ -47,7 +50,8 @@ class DVTAVRDevice: DVTDevice {
 	override var canRename: Int8 { 1 }
 	override var deviceLocation: URL! { URL(fileURLWithPath: "/dev/\(self.identifier!)") }
 //	override var canRunExecutables: Int8 { 1 }
-	override var dvt_labeledSerialNumber: String! { return "Signature: \(String(format: "%02X %02X %02X", self.signature.0, self.signature.1, self.signature.2))" }
+	override var dvt_labeledSerialNumber: String! { return "Signature: \(self.signature?.string ?? "-")" }
+	override var dvt_labeledCapacity: String! { return "Flash: \((self.size > 0 ? "\(self.size)" : "-")) bytes" }
 	
 	//override var runsRemoteFromHostLauncher: Int8 { 1 }
 	//override var canRunMultipleInstancesPerApp: Int8 { 1 }
@@ -93,10 +97,12 @@ class DVTAVRDevice: DVTDevice {
 	}
 	
 	override func forget() {
-		self.paired = false
 		self.pgm?.disconnect()
 		self.pgm = nil
 		self.locator?.delete(device: self.identifier)
+		DispatchQueue.main.async {
+			self.paired = false
+		}
 	}
 	
 	override func shouldPresent(forBuildableContext v1: Any!, buildParameters v2: Any!, error v3: AutoreleasingUnsafeMutablePointer<AnyObject?>!) -> Int8 {
@@ -108,11 +114,44 @@ class DVTAVRDevice: DVTDevice {
 		self.pgm = programmer
 		self.locator?.save(device: self)
 		
-		//DispatchQueue.global(qos: .userInitiated).async {
-			try! self.pgm!.connect()
-			try! self.pgm!.verifiySignature()
-		//}
+		DispatchQueue.global(qos: .background).async {
+			let con = (try? self.connect()) ?? false
+			DispatchQueue.main.async {
+				self.connected = con
+			}
+		}
 				
 		return true
 	}
+	
+	func connect() throws -> Bool {
+		guard let pgm = self.pgm else { throw "Programmer not set up. Maybe device is not paired." }
+		
+		try pgm.connect()
+		let sig = try pgm.getSignature()
+		self.signature = sig
+		let _ = pgm.verifiySignature(sig)
+		self.size = try pgm.getMemorySize()
+		self.modelName = pgm.part
+		
+		return true
+	}
+	
+	override class func keyPathsForValuesAffectingDeviceWindowCategory() -> Set<AnyHashable>! {
+		return ["ignored","paired","connected"]
+	}
+	
+	override class func keyPathsForValuesAffectingHasConnection() -> Set<AnyHashable>! {
+		return ["connected"]
+	}
+	
+	override class func keyPathsForValuesAffectingDvt_labeledSerialNumber() -> Set<AnyHashable>! {
+		return ["signature"]
+	}
+	
+	override class func keyPathsForValuesAffectingDvt_labeledCapacity() -> Set<AnyHashable>! {
+		return ["size"]
+	}
+	
+	
 }
